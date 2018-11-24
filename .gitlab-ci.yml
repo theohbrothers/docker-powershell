@@ -15,7 +15,7 @@ build-curl-ubuntu18.04:
     - api
   variables:
     VARIANT_TAG: "curl-ubuntu18.04"
-    VARIANT_TAG_WITH_VERSION: "curl-ubuntu18.04-v1.0.0a"
+    VARIANT_TAG_WITH_VERSION: "curl-ubuntu18.04-v1.0.0"
     VARIANT_BUILD_DIR: "variants/ubuntu18.04/curl"
   before_script:
     - date '+%Y-%m-%d %H:%M:%S %z'
@@ -61,7 +61,7 @@ build-curl-git-ubuntu18.04:
     - api
   variables:
     VARIANT_TAG: "curl-git-ubuntu18.04"
-    VARIANT_TAG_WITH_VERSION: "curl-git-ubuntu18.04-v1.0.0a"
+    VARIANT_TAG_WITH_VERSION: "curl-git-ubuntu18.04-v1.0.0"
     VARIANT_BUILD_DIR: "variants/ubuntu18.04/curl-git"
   before_script:
     - date '+%Y-%m-%d %H:%M:%S %z'
@@ -107,7 +107,7 @@ build-git-ubuntu18.04:
     - api
   variables:
     VARIANT_TAG: "git-ubuntu18.04"
-    VARIANT_TAG_WITH_VERSION: "git-ubuntu18.04-v1.0.0a"
+    VARIANT_TAG_WITH_VERSION: "git-ubuntu18.04-v1.0.0"
     VARIANT_BUILD_DIR: "variants/ubuntu18.04/git"
   before_script:
     - date '+%Y-%m-%d %H:%M:%S %z'
@@ -153,7 +153,7 @@ build-curl-alpine:
     - api
   variables:
     VARIANT_TAG: "curl-alpine"
-    VARIANT_TAG_WITH_VERSION: "curl-alpine-v1.0.0a"
+    VARIANT_TAG_WITH_VERSION: "curl-alpine-v1.0.0"
     VARIANT_BUILD_DIR: "variants/alpine/curl"
   before_script:
     - date '+%Y-%m-%d %H:%M:%S %z'
@@ -199,7 +199,7 @@ build-curl-git-alpine:
     - api
   variables:
     VARIANT_TAG: "curl-git-alpine"
-    VARIANT_TAG_WITH_VERSION: "curl-git-alpine-v1.0.0a"
+    VARIANT_TAG_WITH_VERSION: "curl-git-alpine-v1.0.0"
     VARIANT_BUILD_DIR: "variants/alpine/curl-git"
   before_script:
     - date '+%Y-%m-%d %H:%M:%S %z'
@@ -245,7 +245,7 @@ build-git-alpine:
     - api
   variables:
     VARIANT_TAG: "git-alpine"
-    VARIANT_TAG_WITH_VERSION: "git-alpine-v1.0.0a"
+    VARIANT_TAG_WITH_VERSION: "git-alpine-v1.0.0"
     VARIANT_BUILD_DIR: "variants/alpine/git"
   before_script:
     - date '+%Y-%m-%d %H:%M:%S %z'

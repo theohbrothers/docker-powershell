@@ -1,5 +1,5 @@
 # Docker image variants' definitions
-$VARIANTS_VERSION = "1.0.0a"
+$VARIANTS_VERSION = "1.0.0"
 $VARIANTS = @(
     @{
         tag = 'curl-ubuntu18.04'
