@@ -1,5 +1,7 @@
 # docker-powershell
 
+Docker image based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/microsoft/powershell/)
+
 | Tags |
 |:-------:| 
 | `:curl-ubuntu18.04` | 
