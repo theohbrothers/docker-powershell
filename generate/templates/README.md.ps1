@@ -1,7 +1,7 @@
 @"
-# Powershell
+# docker-powershell
 
-Based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/microsoft/powershell/)
+Docker image based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/microsoft/powershell/)
 
 | Tags |
 |:-------:| $( $VARIANTS | % {
