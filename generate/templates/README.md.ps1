@@ -1,7 +1,5 @@
 @"
-# Powershell
-
-Based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/microsoft/powershell/)
+# docker-powershell
 
 | Tags |
 |:-------:| $( $VARIANTS | % {
