@@ -17,7 +17,7 @@ jobs:
 $( $VARIANTS | % {
 @"
 
-  build-$( $_['tag'] ):
+  build-$( $_['tag'].Replace('.', '-') ):
     runs-on: ubuntu-18.04
     env:
       VARIANT_TAG: $( $_['tag'] )
