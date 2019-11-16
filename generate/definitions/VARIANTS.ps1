@@ -1,5 +1,4 @@
 # Docker image variants' definitions
-$VARIANTS_VERSION = "1.0.1"
 $VARIANTS = @(
     @{
         tag = 'curl-ubuntu18.04'
@@ -29,7 +28,6 @@ $VARIANTS = @(
 
 # Docker image variants' definitions (shared)
 $VARIANTS_SHARED = @{
-    version = $VARIANTS_VERSION
     buildContextFiles = @{
         templates = @{
             'Dockerfile' = @{
