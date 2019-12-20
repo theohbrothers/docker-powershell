@@ -9,9 +9,11 @@ Docker image based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/mi
 
 | Tags |
 |:-------:| 
-| `:curl-ubuntu18.04` | 
-| `:curl-git-ubuntu18.04` | 
-| `:git-ubuntu18.04` | 
-| `:curl-alpine` | 
-| `:curl-git-alpine` | 
-| `:git-alpine` |
+| `:6.1.3-alpine-3.8` | 
+| `:6.1.3-alpine-3.8-git` | 
+| `:6.2.3-alpine-3.8` | 
+| `:6.2.3-alpine-3.8-git` | 
+| `:6.1.3-ubuntu-18.04` | 
+| `:6.1.3-ubuntu-18.04-git` | 
+| `:6.2.3-ubuntu-18.04` | 
+| `:6.2.3-ubuntu-18.04-git` |
