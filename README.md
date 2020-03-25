@@ -18,4 +18,6 @@ Docker image based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/mi
 | `:6.1.3-ubuntu-18.04` | 
 | `:6.1.3-ubuntu-18.04-git` | 
 | `:6.2.4-ubuntu-18.04` | 
-| `:6.2.4-ubuntu-18.04-git` |
+| `:6.2.4-ubuntu-18.04-git` | 
+| `:7.0.0-ubuntu-18.04` | 
+| `:7.0.0-ubuntu-18.04-git` |
