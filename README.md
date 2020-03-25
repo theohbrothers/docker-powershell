@@ -5,7 +5,7 @@
 [![docker-image-size](https://img.shields.io/microbadger/image-size/theohbrothers/docker-powershell/latest)](https://hub.docker.com/r/theohbrothers/docker-powershell)
 [![docker-image-layers](https://img.shields.io/microbadger/layers/theohbrothers/docker-powershell/latest)](https://hub.docker.com/r/theohbrothers/docker-powershell)
 
-Docker image based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/microsoft/powershell/)
+Docker image based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/microsoft/powershell/), with useful tools.
 
 | Tags |
 |:-------:| 
