@@ -11,8 +11,8 @@ Docker image based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/mi
 |:-------:| 
 | `:6.1.3-alpine-3.8` | 
 | `:6.1.3-alpine-3.8-git` | 
-| `:6.2.3-alpine-3.8` | 
-| `:6.2.3-alpine-3.8-git` | 
+| `:6.2.4-alpine-3.8` | 
+| `:6.2.4-alpine-3.8-git` | 
 | `:6.1.3-ubuntu-18.04` | 
 | `:6.1.3-ubuntu-18.04-git` | 
 | `:6.2.3-ubuntu-18.04` | 

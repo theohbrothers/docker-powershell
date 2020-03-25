@@ -112,12 +112,12 @@ jobs:
     - name: Clean-up
       run: docker logout
       if: always()
-  build-6-2-3-alpine-3-8:
+  build-6-2-4-alpine-3-8:
     runs-on: ubuntu-18.04
     env:
-      VARIANT_TAG: 6.2.3-alpine-3.8
-      # VARIANT_TAG_WITH_REF: 6.2.3-alpine-3.8-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/6.2.3-alpine-3.8
+      VARIANT_TAG: 6.2.4-alpine-3.8
+      # VARIANT_TAG_WITH_REF: 6.2.4-alpine-3.8-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/6.2.4-alpine-3.8
     steps:
     - uses: actions/checkout@v1
     - name: Display system info (linux)
@@ -165,12 +165,12 @@ jobs:
     - name: Clean-up
       run: docker logout
       if: always()
-  build-6-2-3-alpine-3-8-git:
+  build-6-2-4-alpine-3-8-git:
     runs-on: ubuntu-18.04
     env:
-      VARIANT_TAG: 6.2.3-alpine-3.8-git
-      # VARIANT_TAG_WITH_REF: 6.2.3-alpine-3.8-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/6.2.3-alpine-3.8-git
+      VARIANT_TAG: 6.2.4-alpine-3.8-git
+      # VARIANT_TAG_WITH_REF: 6.2.4-alpine-3.8-git-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/6.2.4-alpine-3.8-git
     steps:
     - uses: actions/checkout@v1
     - name: Display system info (linux)
