@@ -39,9 +39,9 @@ $local:VARIANTS_MATRIX = @(
         base_image_tag = '7.0.0-ubuntu-18.04'
         subvariants = @(
             @{ components = $null }
-            @{ components = @( 'git' ) }
+            @{ components = @( 'git' ); tag_as_latest = $true }
         )
-        tag_as_latest = $true
+
     }
 )
 $VARIANTS = @(
@@ -58,11 +58,11 @@ $VARIANTS = @(
                     $variant['base_image_tag']
                     $subVariant['components'] | ? { $_ }
                 ) -join '-'
-                tag_as_latest = if ( $variant.Contains('tag_as_latest') ) {
-                    $variant['tag_as_latest']
-                } else {
-                    $false
-                }
+                tag_as_latest = if ( $subVariant.Contains('tag_as_latest') ) {
+                                    $subVariant['tag_as_latest']
+                                } else {
+                                    $false
+                                }
             }
         }
     }
