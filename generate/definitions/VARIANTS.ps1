@@ -41,6 +41,7 @@ $local:VARIANTS_MATRIX = @(
             @{ components = $null }
             @{ components = @( 'git' ) }
         )
+        tag_as_latest = $true
     }
 )
 $VARIANTS = @(
@@ -57,6 +58,11 @@ $VARIANTS = @(
                     $variant['base_image_tag']
                     $subVariant['components'] | ? { $_ }
                 ) -join '-'
+                tag_as_latest = if ( $variant.Contains('tag_as_latest') ) {
+                    $variant['tag_as_latest']
+                } else {
+                    $false
+                }
             }
         }
     }
