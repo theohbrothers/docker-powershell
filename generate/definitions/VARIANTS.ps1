@@ -60,6 +60,14 @@ $local:VARIANTS_MATRIX = @(
         )
 
     }
+    @{
+        base_image_tag = '7.1.1-ubuntu-16.04-20210125'
+        subvariants = @(
+            @{ components = $null }
+            @{ components = @( 'git' ); tag_as_latest = $true }
+        )
+
+    }
 )
 $VARIANTS = @(
     foreach ($variant in $VARIANTS_MATRIX){
