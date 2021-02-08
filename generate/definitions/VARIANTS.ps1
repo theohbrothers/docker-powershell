@@ -1,5 +1,6 @@
 # Docker image variants' definitions
 $local:VARIANTS_MATRIX = @(
+    # alpine
     @{
         base_image_tag = '6.1.3-alpine-3.8'
         subvariants = @(
@@ -16,6 +17,15 @@ $local:VARIANTS_MATRIX = @(
     }
     @{
         base_image_tag = '7.0.0-alpine-3.10'
+        subvariants = @(
+            @{ components = $null }
+            @{ components = @( 'git' ) }
+        )
+    }
+
+    # ubuntu
+    @{
+        base_image_tag = '6.0.2-ubuntu-16.04'
         subvariants = @(
             @{ components = $null }
             @{ components = @( 'git' ) }
