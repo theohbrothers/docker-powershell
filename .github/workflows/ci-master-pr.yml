@@ -825,12 +825,12 @@ jobs:
     - name: Clean-up
       run: docker logout
       if: always()
-  build-7-0-3-ubuntu-18-04:
+  build-7-0-3-ubuntu-18-04-20201027:
     runs-on: ubuntu-18.04
     env:
-      VARIANT_TAG: 7.0.3-ubuntu-18.04
-      # VARIANT_TAG_WITH_REF: 7.0.3-ubuntu-18.04-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/7.0.3-ubuntu-18.04
+      VARIANT_TAG: 7.0.3-ubuntu-18.04-20201027
+      # VARIANT_TAG_WITH_REF: 7.0.3-ubuntu-18.04-20201027-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/7.0.3-ubuntu-18.04-20201027
     steps:
     - uses: actions/checkout@v1
     - name: Display system info (linux)
@@ -876,12 +876,12 @@ jobs:
     - name: Clean-up
       run: docker logout
       if: always()
-  build-7-0-3-ubuntu-18-04-git:
+  build-7-0-3-ubuntu-18-04-20201027-git:
     runs-on: ubuntu-18.04
     env:
-      VARIANT_TAG: 7.0.3-ubuntu-18.04-git
-      # VARIANT_TAG_WITH_REF: 7.0.3-ubuntu-18.04-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/7.0.3-ubuntu-18.04-git
+      VARIANT_TAG: 7.0.3-ubuntu-18.04-20201027-git
+      # VARIANT_TAG_WITH_REF: 7.0.3-ubuntu-18.04-20201027-git-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/7.0.3-ubuntu-18.04-20201027-git
     steps:
     - uses: actions/checkout@v1
     - name: Display system info (linux)
