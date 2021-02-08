@@ -17,6 +17,8 @@ Docker image based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/mi
 | `:7.0.3-alpine-3.9-20200928-git` |
 | `:7.1.1-alpine-3.11-20210125` |
 | `:7.1.1-alpine-3.11-20210125-git` |
+| `:7.2.0-preview.2-alpine-3.11-20210125` |
+| `:7.2.0-preview.2-alpine-3.11-20210125-git` |
 | `:6.0.2-ubuntu-16.04` |
 | `:6.0.2-ubuntu-16.04-git` |
 | `:6.1.3-ubuntu-18.04` |
