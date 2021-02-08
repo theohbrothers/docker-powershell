@@ -46,7 +46,7 @@ $local:VARIANTS_MATRIX = @(
         )
     }
     @{
-        base_image_tag = '7.0.0-ubuntu-18.04'
+        base_image_tag = '7.0.3-ubuntu-18.04'
         subvariants = @(
             @{ components = $null }
             @{ components = @( 'git' ); tag_as_latest = $true }
