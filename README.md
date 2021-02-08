@@ -27,7 +27,7 @@ Docker image based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/mi
 | `:6.2.4-ubuntu-18.04-git` |
 | `:7.0.3-ubuntu-18.04-20201027` |
 | `:7.0.3-ubuntu-18.04-20201027-git` |
-| `:7.1.1-ubuntu-16.04-20210125` |
-| `:7.1.1-ubuntu-16.04-20210125-git` |
+| `:7.1.1-ubuntu-18.04-20210125` |
+| `:7.1.1-ubuntu-18.04-20210125-git` |
 | `:7.2.0-preview.2-ubuntu-16.04-20210125` |
 | `:7.2.0-preview.2-ubuntu-16.04-20210125-git`, `:latest` |

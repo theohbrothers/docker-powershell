@@ -9,7 +9,7 @@ $local:VARIANTS_BASE_IMAGE_TAGS = @(
     '6.1.3-ubuntu-18.04'
     '6.2.4-ubuntu-18.04'
     '7.0.3-ubuntu-18.04-20201027'
-    '7.1.1-ubuntu-16.04-20210125'
+    '7.1.1-ubuntu-18.04-20210125'
     '7.2.0-preview.2-ubuntu-16.04-20210125'
 )
 $local:VARIANTS_MATRIX = @(
