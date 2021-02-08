@@ -1,47 +1,26 @@
 # Docker image variants' definitions
+$local:VARIANTS_BASE_IMAGE_TAGS = @(
+    '6.1.3-alpine-3.8'
+    '6.2.4-alpine-3.8'
+    '7.0.3-alpine-3.9-20200928'
+    '7.1.1-alpine-3.11-20210125'
+    '7.2.0-preview.2-alpine-3.11-20210125'
+    '6.0.2-ubuntu-16.04'
+    '6.1.3-ubuntu-18.04'
+    '6.2.4-ubuntu-18.04'
+    '7.0.3-ubuntu-18.04-20201027'
+    '7.1.1-ubuntu-18.04-20210125'
+    '7.2.0-preview.2-ubuntu-18.04-20210125'
+)
 $local:VARIANTS_MATRIX = @(
-    @{
-        base_image_tag = '6.1.3-alpine-3.8'
-        subvariants = @(
-            @{ components = $null }
-            @{ components = @( 'git' ) }
-        )
-    }
-    @{
-        base_image_tag = '6.2.4-alpine-3.8'
-        subvariants = @(
-            @{ components = $null }
-            @{ components = @( 'git' ) }
-        )
-    }
-    @{
-        base_image_tag = '7.0.0-alpine-3.10'
-        subvariants = @(
-            @{ components = $null }
-            @{ components = @( 'git' ) }
-        )
-    }
-    @{
-        base_image_tag = '6.1.3-ubuntu-18.04'
-        subvariants = @(
-            @{ components = $null }
-            @{ components = @( 'git' ) }
-        )
-    }
-    @{
-        base_image_tag = '6.2.4-ubuntu-18.04'
-        subvariants = @(
-            @{ components = $null }
-            @{ components = @( 'git' ) }
-        )
-    }
-    @{
-        base_image_tag = '7.0.0-ubuntu-18.04'
-        subvariants = @(
-            @{ components = $null }
-            @{ components = @( 'git' ); tag_as_latest = $true }
-        )
-
+    $local:VARIANTS_BASE_IMAGE_TAGS | % {
+        @{
+            base_image_tag = $_
+            subvariants = @(
+                @{ components = $null }
+                @{ components = @( 'git' ); tag_as_latest = if ($_ -eq $local:VARIANTS_BASE_IMAGE_TAGS[$local:VARIANTS_BASE_IMAGE_TAGS.Count - 1]) { $true } else { $false } }
+            )
+        }
     }
 )
 $VARIANTS = @(
