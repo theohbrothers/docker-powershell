@@ -16,7 +16,7 @@ $local:VARIANTS_MATRIX = @(
         )
     }
     @{
-        base_image_tag = '7.0.0-alpine-3.10'
+        base_image_tag = '7.0.3-alpine-3.9'
         subvariants = @(
             @{ components = $null }
             @{ components = @( 'git' ) }
