@@ -8,6 +8,8 @@
 
 Docker image based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/microsoft/powershell/), with useful tools.
 
+## Tags
+
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
 $(
