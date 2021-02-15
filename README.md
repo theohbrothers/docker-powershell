@@ -7,6 +7,8 @@
 
 Docker image based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/microsoft/powershell/), with useful tools.
 
+## Tags
+
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
 | `:7.2.0-preview.2-alpine-3.11-20210125` | [View](variants/7.2.0-preview.2-alpine-3.11-20210125 ) |
