@@ -1,16 +1,17 @@
 # Docker image variants' definitions
 $local:VARIANTS_BASE_IMAGE_TAGS = @(
-    '6.1.3-alpine-3.8'
-    '6.2.4-alpine-3.8'
-    '7.0.3-alpine-3.9-20200928'
-    '7.1.1-alpine-3.11-20210125'
     '7.2.0-preview.2-alpine-3.11-20210125'
-    '6.0.2-ubuntu-16.04'
-    '6.1.3-ubuntu-18.04'
-    '6.2.4-ubuntu-18.04'
-    '7.0.3-ubuntu-18.04-20201027'
-    '7.1.1-ubuntu-18.04-20210125'
+    '7.1.1-alpine-3.11-20210125'
+    '7.0.3-alpine-3.9-20200928'
+    '6.2.4-alpine-3.8'
+    '6.1.3-alpine-3.8'
+
     '7.2.0-preview.2-ubuntu-18.04-20210125'
+    '7.1.1-ubuntu-18.04-20210125'
+    '7.0.3-ubuntu-18.04-20201027'
+    '6.2.4-ubuntu-18.04'
+    '6.1.3-ubuntu-18.04'
+    '6.0.2-ubuntu-16.04'
 )
 $local:VARIANTS_MATRIX = @(
     $local:VARIANTS_BASE_IMAGE_TAGS | % {
