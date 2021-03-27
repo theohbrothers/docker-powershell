@@ -9,12 +9,12 @@ on:
     - master
 
 jobs:
-  build-7-2-0-preview-2-alpine-3-11-20210125:
+  build-7-2-0-preview-4-alpine-3-11-20210316:
     runs-on: ubuntu-18.04
     env:
-      VARIANT_TAG: 7.2.0-preview.2-alpine-3.11-20210125
-      # VARIANT_TAG_WITH_REF: 7.2.0-preview.2-alpine-3.11-20210125-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/7.2.0-preview.2-alpine-3.11-20210125
+      VARIANT_TAG: 7.2.0-preview.4-alpine-3.11-20210316
+      # VARIANT_TAG_WITH_REF: 7.2.0-preview.4-alpine-3.11-20210316-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/7.2.0-preview.4-alpine-3.11-20210316
     steps:
     - uses: actions/checkout@v1
     - name: Display system info (linux)
@@ -60,12 +60,12 @@ jobs:
     - name: Clean-up
       run: docker logout
       if: always()
-  build-7-2-0-preview-2-alpine-3-11-20210125-git:
+  build-7-2-0-preview-4-alpine-3-11-20210316-git:
     runs-on: ubuntu-18.04
     env:
-      VARIANT_TAG: 7.2.0-preview.2-alpine-3.11-20210125-git
-      # VARIANT_TAG_WITH_REF: 7.2.0-preview.2-alpine-3.11-20210125-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/7.2.0-preview.2-alpine-3.11-20210125-git
+      VARIANT_TAG: 7.2.0-preview.4-alpine-3.11-20210316-git
+      # VARIANT_TAG_WITH_REF: 7.2.0-preview.4-alpine-3.11-20210316-git-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/7.2.0-preview.4-alpine-3.11-20210316-git
     steps:
     - uses: actions/checkout@v1
     - name: Display system info (linux)

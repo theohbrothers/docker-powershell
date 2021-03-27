@@ -1,6 +1,6 @@
 # Docker image variants' definitions
 $local:VARIANTS_BASE_IMAGE_TAGS = @(
-    '7.2.0-preview.2-alpine-3.11-20210125'
+    '7.2.0-preview.4-alpine-3.11-20210316'
     '7.1.3-alpine-3.11-20210316'
     '7.0.3-alpine-3.9-20200928'
     '6.2.4-alpine-3.8'
