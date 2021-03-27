@@ -12,8 +12,8 @@ Dockerized `powershell`, based on [mcr.microsoft.com/powershell](https://hub.doc
 |:-------:|:---------:|
 | `:7.2.0-preview.2-alpine-3.11-20210125` | [View](variants/7.2.0-preview.2-alpine-3.11-20210125 ) |
 | `:7.2.0-preview.2-alpine-3.11-20210125-git` | [View](variants/7.2.0-preview.2-alpine-3.11-20210125-git ) |
-| `:7.1.1-alpine-3.11-20210125` | [View](variants/7.1.1-alpine-3.11-20210125 ) |
-| `:7.1.1-alpine-3.11-20210125-git` | [View](variants/7.1.1-alpine-3.11-20210125-git ) |
+| `:7.1.3-alpine-3.11-20210316` | [View](variants/7.1.3-alpine-3.11-20210316 ) |
+| `:7.1.3-alpine-3.11-20210316-git` | [View](variants/7.1.3-alpine-3.11-20210316-git ) |
 | `:7.0.3-alpine-3.9-20200928` | [View](variants/7.0.3-alpine-3.9-20200928 ) |
 | `:7.0.3-alpine-3.9-20200928-git` | [View](variants/7.0.3-alpine-3.9-20200928-git ) |
 | `:6.2.4-alpine-3.8` | [View](variants/6.2.4-alpine-3.8 ) |
