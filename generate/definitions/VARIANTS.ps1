@@ -13,13 +13,14 @@ $local:VARIANTS_BASE_IMAGE_TAGS = @(
     '6.1.3-ubuntu-18.04'
     '6.0.2-ubuntu-16.04'
 )
+$local:VARIANTS_BASE_IMAGE_TAG_LATEST_STABLE = $VARIANTS_BASE_IMAGE_TAGS | Sort-Object -Descending -Property @{ Expression={ if ($_ -match '^(v?\d+\.\d+\.\d+)') { [version]$matches[1] } } } | ? { $_ -notmatch 'preview' -and $_ -match 'ubuntu\-18.04' } | Select-Object -First 1
 $local:VARIANTS_MATRIX = @(
     $local:VARIANTS_BASE_IMAGE_TAGS | % {
         @{
             base_image_tag = $_
             subvariants = @(
                 @{ components = $null }
-                @{ components = @( 'git' ); tag_as_latest = if ($_ -eq $local:VARIANTS_BASE_IMAGE_TAGS[$local:VARIANTS_BASE_IMAGE_TAGS.Count - 1]) { $true } else { $false } }
+                @{ components = @( 'git' ); tag_as_latest = if ($_ -eq $local:VARIANTS_BASE_IMAGE_TAG_LATEST_STABLE ) { $true } else { $false } }
             )
         }
     }
