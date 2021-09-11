@@ -1,6 +1,6 @@
 @"
 $(
-$VARIANT['_metadata']['components'] | % {
+$VARIANT['_metadata']['components'] | ? { $_ } | % {
     if ( $VARIANT['_metadata']['base_image_tag'] -match '\balpine\b' ) {
         @"
 RUN apk add --no-cache $_
