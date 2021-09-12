@@ -140,12 +140,12 @@ jobs:
       run: docker logout
       if: always()
 
-  build-7-2-0-preview-9-alpine-3-11-20210819-git:
+  build-7-2-0-preview-9-alpine-3-11-20210819-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT_TAG: 7.2.0-preview.9-alpine-3.11-20210819-git
-      # VARIANT_TAG_WITH_REF: 7.2.0-preview.9-alpine-3.11-20210819-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/7.2.0-preview.9-alpine-3.11-20210819-git
+      VARIANT_TAG: 7.2.0-preview.9-alpine-3.11-20210819-git-sops
+      # VARIANT_TAG_WITH_REF: 7.2.0-preview.9-alpine-3.11-20210819-git-sops-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/7.2.0-preview.9-alpine-3.11-20210819-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -400,12 +400,12 @@ jobs:
       run: docker logout
       if: always()
 
-  build-7-1-4-alpine-3-11-20210819-git:
+  build-7-1-4-alpine-3-11-20210819-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT_TAG: 7.1.4-alpine-3.11-20210819-git
-      # VARIANT_TAG_WITH_REF: 7.1.4-alpine-3.11-20210819-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/7.1.4-alpine-3.11-20210819-git
+      VARIANT_TAG: 7.1.4-alpine-3.11-20210819-git-sops
+      # VARIANT_TAG_WITH_REF: 7.1.4-alpine-3.11-20210819-git-sops-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/7.1.4-alpine-3.11-20210819-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -660,12 +660,12 @@ jobs:
       run: docker logout
       if: always()
 
-  build-7-0-3-alpine-3-9-20200928-git:
+  build-7-0-3-alpine-3-9-20200928-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT_TAG: 7.0.3-alpine-3.9-20200928-git
-      # VARIANT_TAG_WITH_REF: 7.0.3-alpine-3.9-20200928-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/7.0.3-alpine-3.9-20200928-git
+      VARIANT_TAG: 7.0.3-alpine-3.9-20200928-git-sops
+      # VARIANT_TAG_WITH_REF: 7.0.3-alpine-3.9-20200928-git-sops-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/7.0.3-alpine-3.9-20200928-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -920,12 +920,12 @@ jobs:
       run: docker logout
       if: always()
 
-  build-6-2-4-alpine-3-8-git:
+  build-6-2-4-alpine-3-8-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT_TAG: 6.2.4-alpine-3.8-git
-      # VARIANT_TAG_WITH_REF: 6.2.4-alpine-3.8-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/6.2.4-alpine-3.8-git
+      VARIANT_TAG: 6.2.4-alpine-3.8-git-sops
+      # VARIANT_TAG_WITH_REF: 6.2.4-alpine-3.8-git-sops-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/6.2.4-alpine-3.8-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -1180,12 +1180,12 @@ jobs:
       run: docker logout
       if: always()
 
-  build-6-1-3-alpine-3-8-git:
+  build-6-1-3-alpine-3-8-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT_TAG: 6.1.3-alpine-3.8-git
-      # VARIANT_TAG_WITH_REF: 6.1.3-alpine-3.8-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/6.1.3-alpine-3.8-git
+      VARIANT_TAG: 6.1.3-alpine-3.8-git-sops
+      # VARIANT_TAG_WITH_REF: 6.1.3-alpine-3.8-git-sops-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/6.1.3-alpine-3.8-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -1440,12 +1440,12 @@ jobs:
       run: docker logout
       if: always()
 
-  build-7-2-0-preview-9-ubuntu-18-04-20210819-git:
+  build-7-2-0-preview-9-ubuntu-18-04-20210819-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT_TAG: 7.2.0-preview.9-ubuntu-18.04-20210819-git
-      # VARIANT_TAG_WITH_REF: 7.2.0-preview.9-ubuntu-18.04-20210819-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/7.2.0-preview.9-ubuntu-18.04-20210819-git
+      VARIANT_TAG: 7.2.0-preview.9-ubuntu-18.04-20210819-git-sops
+      # VARIANT_TAG_WITH_REF: 7.2.0-preview.9-ubuntu-18.04-20210819-git-sops-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/7.2.0-preview.9-ubuntu-18.04-20210819-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -1700,12 +1700,12 @@ jobs:
       run: docker logout
       if: always()
 
-  build-7-1-4-ubuntu-18-04-20210819-git:
+  build-7-1-4-ubuntu-18-04-20210819-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT_TAG: 7.1.4-ubuntu-18.04-20210819-git
-      # VARIANT_TAG_WITH_REF: 7.1.4-ubuntu-18.04-20210819-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/7.1.4-ubuntu-18.04-20210819-git
+      VARIANT_TAG: 7.1.4-ubuntu-18.04-20210819-git-sops
+      # VARIANT_TAG_WITH_REF: 7.1.4-ubuntu-18.04-20210819-git-sops-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/7.1.4-ubuntu-18.04-20210819-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -1961,12 +1961,12 @@ jobs:
       run: docker logout
       if: always()
 
-  build-7-0-3-ubuntu-18-04-20201027-git:
+  build-7-0-3-ubuntu-18-04-20201027-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT_TAG: 7.0.3-ubuntu-18.04-20201027-git
-      # VARIANT_TAG_WITH_REF: 7.0.3-ubuntu-18.04-20201027-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/7.0.3-ubuntu-18.04-20201027-git
+      VARIANT_TAG: 7.0.3-ubuntu-18.04-20201027-git-sops
+      # VARIANT_TAG_WITH_REF: 7.0.3-ubuntu-18.04-20201027-git-sops-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/7.0.3-ubuntu-18.04-20201027-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -2221,12 +2221,12 @@ jobs:
       run: docker logout
       if: always()
 
-  build-6-2-4-ubuntu-18-04-git:
+  build-6-2-4-ubuntu-18-04-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT_TAG: 6.2.4-ubuntu-18.04-git
-      # VARIANT_TAG_WITH_REF: 6.2.4-ubuntu-18.04-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/6.2.4-ubuntu-18.04-git
+      VARIANT_TAG: 6.2.4-ubuntu-18.04-git-sops
+      # VARIANT_TAG_WITH_REF: 6.2.4-ubuntu-18.04-git-sops-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/6.2.4-ubuntu-18.04-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -2481,12 +2481,12 @@ jobs:
       run: docker logout
       if: always()
 
-  build-6-1-3-ubuntu-18-04-git:
+  build-6-1-3-ubuntu-18-04-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT_TAG: 6.1.3-ubuntu-18.04-git
-      # VARIANT_TAG_WITH_REF: 6.1.3-ubuntu-18.04-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/6.1.3-ubuntu-18.04-git
+      VARIANT_TAG: 6.1.3-ubuntu-18.04-git-sops
+      # VARIANT_TAG_WITH_REF: 6.1.3-ubuntu-18.04-git-sops-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/6.1.3-ubuntu-18.04-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -2741,12 +2741,12 @@ jobs:
       run: docker logout
       if: always()
 
-  build-6-0-2-ubuntu-16-04-git:
+  build-6-0-2-ubuntu-16-04-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT_TAG: 6.0.2-ubuntu-16.04-git
-      # VARIANT_TAG_WITH_REF: 6.0.2-ubuntu-16.04-git-${GITHUB_REF}
-      VARIANT_BUILD_DIR: variants/6.0.2-ubuntu-16.04-git
+      VARIANT_TAG: 6.0.2-ubuntu-16.04-git-sops
+      # VARIANT_TAG_WITH_REF: 6.0.2-ubuntu-16.04-git-sops-${GITHUB_REF}
+      VARIANT_BUILD_DIR: variants/6.0.2-ubuntu-16.04-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -2873,7 +2873,7 @@ jobs:
 
   # For Generate-DockerImageVariants: For CalVer releases. Each push to 'release' branch is a time-based release.
   converge-master-and-release-branches:
-    needs: [build-7-2-0-preview-9-alpine-3-11-20210819, build-7-2-0-preview-9-alpine-3-11-20210819-git, build-7-1-4-alpine-3-11-20210819, build-7-1-4-alpine-3-11-20210819-git, build-7-0-3-alpine-3-9-20200928, build-7-0-3-alpine-3-9-20200928-git, build-6-2-4-alpine-3-8, build-6-2-4-alpine-3-8-git, build-6-1-3-alpine-3-8, build-6-1-3-alpine-3-8-git, build-7-2-0-preview-9-ubuntu-18-04-20210819, build-7-2-0-preview-9-ubuntu-18-04-20210819-git, build-7-1-4-ubuntu-18-04-20210819, build-7-1-4-ubuntu-18-04-20210819-git, build-7-0-3-ubuntu-18-04-20201027, build-7-0-3-ubuntu-18-04-20201027-git, build-6-2-4-ubuntu-18-04, build-6-2-4-ubuntu-18-04-git, build-6-1-3-ubuntu-18-04, build-6-1-3-ubuntu-18-04-git, build-6-0-2-ubuntu-16-04, build-6-0-2-ubuntu-16-04-git]
+    needs: [build-7-2-0-preview-9-alpine-3-11-20210819, build-7-2-0-preview-9-alpine-3-11-20210819-git-sops, build-7-1-4-alpine-3-11-20210819, build-7-1-4-alpine-3-11-20210819-git-sops, build-7-0-3-alpine-3-9-20200928, build-7-0-3-alpine-3-9-20200928-git-sops, build-6-2-4-alpine-3-8, build-6-2-4-alpine-3-8-git-sops, build-6-1-3-alpine-3-8, build-6-1-3-alpine-3-8-git-sops, build-7-2-0-preview-9-ubuntu-18-04-20210819, build-7-2-0-preview-9-ubuntu-18-04-20210819-git-sops, build-7-1-4-ubuntu-18-04-20210819, build-7-1-4-ubuntu-18-04-20210819-git-sops, build-7-0-3-ubuntu-18-04-20201027, build-7-0-3-ubuntu-18-04-20201027-git-sops, build-6-2-4-ubuntu-18-04, build-6-2-4-ubuntu-18-04-git-sops, build-6-1-3-ubuntu-18-04, build-6-1-3-ubuntu-18-04-git-sops, build-6-0-2-ubuntu-16-04, build-6-0-2-ubuntu-16-04-git-sops]
     if: github.ref == 'refs/heads/release'
     runs-on: ubuntu-latest
     steps:
@@ -2923,7 +2923,7 @@ jobs:
         run: echo ${{ steps.resolve-release-tag.outputs.TAG }}
 
   update-draft-release:
-    needs: [build-7-2-0-preview-9-alpine-3-11-20210819, build-7-2-0-preview-9-alpine-3-11-20210819-git, build-7-1-4-alpine-3-11-20210819, build-7-1-4-alpine-3-11-20210819-git, build-7-0-3-alpine-3-9-20200928, build-7-0-3-alpine-3-9-20200928-git, build-6-2-4-alpine-3-8, build-6-2-4-alpine-3-8-git, build-6-1-3-alpine-3-8, build-6-1-3-alpine-3-8-git, build-7-2-0-preview-9-ubuntu-18-04-20210819, build-7-2-0-preview-9-ubuntu-18-04-20210819-git, build-7-1-4-ubuntu-18-04-20210819, build-7-1-4-ubuntu-18-04-20210819-git, build-7-0-3-ubuntu-18-04-20201027, build-7-0-3-ubuntu-18-04-20201027-git, build-6-2-4-ubuntu-18-04, build-6-2-4-ubuntu-18-04-git, build-6-1-3-ubuntu-18-04, build-6-1-3-ubuntu-18-04-git, build-6-0-2-ubuntu-16-04, build-6-0-2-ubuntu-16-04-git, resolve-release-tag]
+    needs: [build-7-2-0-preview-9-alpine-3-11-20210819, build-7-2-0-preview-9-alpine-3-11-20210819-git-sops, build-7-1-4-alpine-3-11-20210819, build-7-1-4-alpine-3-11-20210819-git-sops, build-7-0-3-alpine-3-9-20200928, build-7-0-3-alpine-3-9-20200928-git-sops, build-6-2-4-alpine-3-8, build-6-2-4-alpine-3-8-git-sops, build-6-1-3-alpine-3-8, build-6-1-3-alpine-3-8-git-sops, build-7-2-0-preview-9-ubuntu-18-04-20210819, build-7-2-0-preview-9-ubuntu-18-04-20210819-git-sops, build-7-1-4-ubuntu-18-04-20210819, build-7-1-4-ubuntu-18-04-20210819-git-sops, build-7-0-3-ubuntu-18-04-20201027, build-7-0-3-ubuntu-18-04-20201027-git-sops, build-6-2-4-ubuntu-18-04, build-6-2-4-ubuntu-18-04-git-sops, build-6-1-3-ubuntu-18-04, build-6-1-3-ubuntu-18-04-git-sops, build-6-0-2-ubuntu-16-04, build-6-0-2-ubuntu-16-04-git-sops, resolve-release-tag]
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
@@ -2943,7 +2943,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   publish-draft-release:
-    needs: [build-7-2-0-preview-9-alpine-3-11-20210819, build-7-2-0-preview-9-alpine-3-11-20210819-git, build-7-1-4-alpine-3-11-20210819, build-7-1-4-alpine-3-11-20210819-git, build-7-0-3-alpine-3-9-20200928, build-7-0-3-alpine-3-9-20200928-git, build-6-2-4-alpine-3-8, build-6-2-4-alpine-3-8-git, build-6-1-3-alpine-3-8, build-6-1-3-alpine-3-8-git, build-7-2-0-preview-9-ubuntu-18-04-20210819, build-7-2-0-preview-9-ubuntu-18-04-20210819-git, build-7-1-4-ubuntu-18-04-20210819, build-7-1-4-ubuntu-18-04-20210819-git, build-7-0-3-ubuntu-18-04-20201027, build-7-0-3-ubuntu-18-04-20201027-git, build-6-2-4-ubuntu-18-04, build-6-2-4-ubuntu-18-04-git, build-6-1-3-ubuntu-18-04, build-6-1-3-ubuntu-18-04-git, build-6-0-2-ubuntu-16-04, build-6-0-2-ubuntu-16-04-git, converge-master-and-release-branches]
+    needs: [build-7-2-0-preview-9-alpine-3-11-20210819, build-7-2-0-preview-9-alpine-3-11-20210819-git-sops, build-7-1-4-alpine-3-11-20210819, build-7-1-4-alpine-3-11-20210819-git-sops, build-7-0-3-alpine-3-9-20200928, build-7-0-3-alpine-3-9-20200928-git-sops, build-6-2-4-alpine-3-8, build-6-2-4-alpine-3-8-git-sops, build-6-1-3-alpine-3-8, build-6-1-3-alpine-3-8-git-sops, build-7-2-0-preview-9-ubuntu-18-04-20210819, build-7-2-0-preview-9-ubuntu-18-04-20210819-git-sops, build-7-1-4-ubuntu-18-04-20210819, build-7-1-4-ubuntu-18-04-20210819-git-sops, build-7-0-3-ubuntu-18-04-20201027, build-7-0-3-ubuntu-18-04-20201027-git-sops, build-6-2-4-ubuntu-18-04, build-6-2-4-ubuntu-18-04-git-sops, build-6-1-3-ubuntu-18-04, build-6-1-3-ubuntu-18-04-git-sops, build-6-0-2-ubuntu-16-04, build-6-0-2-ubuntu-16-04-git-sops, converge-master-and-release-branches]
     # For Generate-DockerImageVariants: For CalVer releases. Each push to 'release' branch is a time-based release.
     # if: startsWith(github.ref, 'refs/tags/')
     if: github.ref == 'refs/heads/release'

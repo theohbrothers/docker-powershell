@@ -20,7 +20,7 @@ $local:VARIANTS_MATRIX = @(
             base_image_tag = $_
             subvariants = @(
                 @{ components = $null }
-                @{ components = @( 'git' ); tag_as_latest = if ($_ -eq $local:VARIANTS_BASE_IMAGE_TAG_LATEST_STABLE ) { $true } else { $false } }
+                @{ components = @( 'git', 'sops' ); tag_as_latest = if ($_ -eq $local:VARIANTS_BASE_IMAGE_TAG_LATEST_STABLE ) { $true } else { $false } }
             )
         }
     }
@@ -55,8 +55,8 @@ $VARIANTS_SHARED = @{
         templates = @{
             'Dockerfile' = @{
                 common = $true
-                includeHeader = $true
-                includeFooter = $true
+                includeHeader = $false
+                includeFooter = $false
                 passes = @(
                     @{
                         variables = @{}
@@ -66,6 +66,3 @@ $VARIANTS_SHARED = @{
         }
     }
 }
-
-# Send definitions down the pipeline
-$VARIANTS
