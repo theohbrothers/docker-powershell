@@ -252,7 +252,7 @@ if ( $_['tag_as_latest'] ) {
 
 
   publish-draft-release:
-    needs: [$( $local:WORKFLOW_JOB_NAMES -join ', ' ), converge-master-and-release-branches]
+    needs: [$( $local:WORKFLOW_JOB_NAMES -join ', ' ), converge-master-and-release-branches, resolve-release-tag]
 "@
 @'
 
