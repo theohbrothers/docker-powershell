@@ -107,7 +107,7 @@ $VARIANTS | % {
       uses: docker/build-push-action@v2
       with:
         context: `${{ steps.prep.outputs.CONTEXT }}
-        platforms: $( if ($_['_metadata']['distro'] -eq 'alpine' -and $_['_metadata']['distro_version'] -in @( '3.3', '3.4', '3.5' ) ) { 'linux/amd64' } else { 'linux/386,linux/amd64,linux/arm,linux/arm64,linux/s390x' } )
+        platforms: $( $_['_metadata']['platforms'] -join ',' )
         push: false
         tags: |
           `${{ github.repository }}:`${{ steps.prep.outputs.VARIANT_TAG_WITH_REF }}
@@ -122,7 +122,7 @@ $VARIANTS | % {
       uses: docker/build-push-action@v2
       with:
         context: `${{ steps.prep.outputs.CONTEXT }}
-        platforms: $( if ($_['_metadata']['distro'] -eq 'alpine' -and $_['_metadata']['distro_version'] -in @( '3.3', '3.4', '3.5' ) ) { 'linux/amd64' } else { 'linux/386,linux/amd64,linux/arm,linux/arm64,linux/s390x' } )
+        platforms: $( $_['_metadata']['platforms'] -join ',' )
         push: true
         tags: |
           `${{ github.repository }}:`${{ steps.prep.outputs.VARIANT_TAG_WITH_REF }}
@@ -137,7 +137,7 @@ $VARIANTS | % {
       uses: docker/build-push-action@v2
       with:
         context: `${{ steps.prep.outputs.CONTEXT }}
-        platforms: $( if ($_['_metadata']['distro'] -eq 'alpine' -and $_['_metadata']['distro_version'] -in @( '3.3', '3.4', '3.5' ) ) { 'linux/amd64' } else { 'linux/386,linux/amd64,linux/arm,linux/arm64,linux/s390x' } )
+        platforms: $( $_['_metadata']['platforms'] -join ',' )
         push: true
         tags: |
           `${{ github.repository }}:`${{ steps.prep.outputs.VARIANT_TAG }}
