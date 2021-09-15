@@ -32,7 +32,7 @@ $VARIANTS = @(
                 # Metadata object
                 _metadata = @{
                     base_image_tag = $variant['base_image_tag']
-                    platforms =  'linux/386,linux/amd64,linux/arm,linux/arm64,linux/s390x'
+                    platforms =  'linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x'
                     components = $subVariant['components']
                 }
                 # Docker image tag. E.g. '6.1.0-alpine-3.8', '6.1.0-alpine-3.8-git',
