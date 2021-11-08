@@ -12,8 +12,8 @@ Dockerized `powershell`, based on [mcr.microsoft.com/powershell](https://hub.doc
 |:-------:|:---------:|
 | `:7.2.0-alpine-3.14-20211102` | [View](variants/7.2.0-alpine-3.14-20211102 ) |
 | `:7.2.0-alpine-3.14-20211102-git-sops` | [View](variants/7.2.0-alpine-3.14-20211102-git-sops ) |
-| `:7.1.5-alpine-3.11-20211021` | [View](variants/7.1.5-alpine-3.11-20211021 ) |
-| `:7.1.5-alpine-3.11-20211021-git-sops` | [View](variants/7.1.5-alpine-3.11-20211021-git-sops ) |
+| `:7.1.5-alpine-3.13-20211021` | [View](variants/7.1.5-alpine-3.13-20211021 ) |
+| `:7.1.5-alpine-3.13-20211021-git-sops` | [View](variants/7.1.5-alpine-3.13-20211021-git-sops ) |
 | `:7.0.3-alpine-3.9-20200928` | [View](variants/7.0.3-alpine-3.9-20200928 ) |
 | `:7.0.3-alpine-3.9-20200928-git-sops` | [View](variants/7.0.3-alpine-3.9-20200928-git-sops ) |
 | `:6.2.4-alpine-3.8` | [View](variants/6.2.4-alpine-3.8 ) |
@@ -22,10 +22,10 @@ Dockerized `powershell`, based on [mcr.microsoft.com/powershell](https://hub.doc
 | `:6.1.3-alpine-3.8-git-sops` | [View](variants/6.1.3-alpine-3.8-git-sops ) |
 | `:7.2.0-ubuntu-20.04-20211102` | [View](variants/7.2.0-ubuntu-20.04-20211102 ) |
 | `:7.2.0-ubuntu-20.04-20211102-git-sops` | [View](variants/7.2.0-ubuntu-20.04-20211102-git-sops ) |
-| `:7.1.5-ubuntu-18.04-20211021` | [View](variants/7.1.5-ubuntu-18.04-20211021 ) |
-| `:7.1.5-ubuntu-18.04-20211021-git-sops`, `:latest` | [View](variants/7.1.5-ubuntu-18.04-20211021-git-sops ) |
+| `:7.1.5-ubuntu-20.04-20211021` | [View](variants/7.1.5-ubuntu-20.04-20211021 ) |
+| `:7.1.5-ubuntu-20.04-20211021-git-sops` | [View](variants/7.1.5-ubuntu-20.04-20211021-git-sops ) |
 | `:7.0.3-ubuntu-18.04-20201027` | [View](variants/7.0.3-ubuntu-18.04-20201027 ) |
-| `:7.0.3-ubuntu-18.04-20201027-git-sops` | [View](variants/7.0.3-ubuntu-18.04-20201027-git-sops ) |
+| `:7.0.3-ubuntu-18.04-20201027-git-sops`, `:latest` | [View](variants/7.0.3-ubuntu-18.04-20201027-git-sops ) |
 | `:6.2.4-ubuntu-18.04` | [View](variants/6.2.4-ubuntu-18.04 ) |
 | `:6.2.4-ubuntu-18.04-git-sops` | [View](variants/6.2.4-ubuntu-18.04-git-sops ) |
 | `:6.1.3-ubuntu-18.04` | [View](variants/6.1.3-ubuntu-18.04 ) |

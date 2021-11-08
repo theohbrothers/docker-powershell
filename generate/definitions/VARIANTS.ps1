@@ -1,13 +1,13 @@
 # Docker image variants' definitions
 $local:VARIANTS_BASE_IMAGE_TAGS = @(
     '7.2.0-alpine-3.14-20211102'
-    '7.1.5-alpine-3.11-20211021'
+    '7.1.5-alpine-3.13-20211021'
     '7.0.3-alpine-3.9-20200928'
     '6.2.4-alpine-3.8'
     '6.1.3-alpine-3.8'
 
     '7.2.0-ubuntu-20.04-20211102'
-    '7.1.5-ubuntu-18.04-20211021'
+    '7.1.5-ubuntu-20.04-20211021'
     '7.0.3-ubuntu-18.04-20201027'
     '6.2.4-ubuntu-18.04'
     '6.1.3-ubuntu-18.04'
