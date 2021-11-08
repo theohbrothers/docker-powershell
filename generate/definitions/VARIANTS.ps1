@@ -13,7 +13,7 @@ $local:VARIANTS_BASE_IMAGE_TAGS = @(
     '6.1.3-ubuntu-18.04'
     '6.0.2-ubuntu-16.04'
 )
-$local:VARIANTS_BASE_IMAGE_TAG_LATEST_STABLE = $VARIANTS_BASE_IMAGE_TAGS | Sort-Object -Descending -Property @{ Expression={ if ($_ -match '^(v?\d+\.\d+\.\d+)') { [version]$matches[1] } } } | ? { $_ -notmatch 'preview' -and $_ -match 'ubuntu\-18.04' } | Select-Object -First 1
+$local:VARIANTS_BASE_IMAGE_TAG_LATEST_STABLE = $local:VARIANTS_BASE_IMAGE_TAGS | ? { $_ -match 'ubuntu' } | Select-Object -First 1
 $local:VARIANTS_MATRIX = @(
     $local:VARIANTS_BASE_IMAGE_TAGS | % {
         @{

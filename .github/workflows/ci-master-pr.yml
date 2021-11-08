@@ -1525,6 +1525,7 @@ jobs:
           ${{ github.repository }}:${{ steps.prep.outputs.VARIANT_TAG }}
           ${{ github.repository }}:${{ steps.prep.outputs.VARIANT_TAG_WITH_REF }}
           ${{ github.repository }}:${{ steps.prep.outputs.VARIANT_TAG_WITH_REF_AND_SHA_SHORT }}
+          ${{ github.repository }}:latest
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
 
@@ -2033,7 +2034,6 @@ jobs:
           ${{ github.repository }}:${{ steps.prep.outputs.VARIANT_TAG }}
           ${{ github.repository }}:${{ steps.prep.outputs.VARIANT_TAG_WITH_REF }}
           ${{ github.repository }}:${{ steps.prep.outputs.VARIANT_TAG_WITH_REF_AND_SHA_SHORT }}
-          ${{ github.repository }}:latest
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
 
