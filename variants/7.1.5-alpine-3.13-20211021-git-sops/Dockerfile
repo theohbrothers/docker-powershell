@@ -9,6 +9,9 @@ ENV DOTNET_CLI_TELEMETRY_OPTOUT=1
 ENV DOTNET_TELEMETRY_OPTOUT=1
 ENV COMPlus_EnableDiagnostics=0
 
+# Install Pester
+RUN pwsh -c 'Install-Module Pester -Force -Scope AllUsers -MinimumVersion 4.0.0 -MaximumVersion 4.10.1 -ErrorAction Stop'
+
 RUN apk add --no-cache git
 
 # Note: sops does not provide binaries for other arch other than linux/i386 and linux/amd64. So sops might not work on other architectures.
