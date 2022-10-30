@@ -32,3 +32,17 @@ Dockerized `powershell`, based on [mcr.microsoft.com/powershell](https://hub.doc
 | `:6.1.3-ubuntu-18.04-git-sops` | [View](variants/6.1.3-ubuntu-18.04-git-sops ) |
 | `:6.0.2-ubuntu-16.04` | [View](variants/6.0.2-ubuntu-16.04 ) |
 | `:6.0.2-ubuntu-16.04-git-sops` | [View](variants/6.0.2-ubuntu-16.04-git-sops ) |
+
+## Development
+
+Requires Windows `powershell` or [`pwsh`](https://github.com/PowerShell/PowerShell).
+
+```powershell
+# Install Generate-DockerImageVariants module: https://github.com/theohbrothers/Generate-DockerImageVariants
+Install-Module -Name Generate-DockerImageVariants -Repository PSGallery -Scope CurrentUser -Force -Verbose
+
+# Edit ./generate templates
+
+# Generate the variants
+Generate-DockerImageVariants .
+```
