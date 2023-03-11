@@ -10,7 +10,8 @@ ENV DOTNET_TELEMETRY_OPTOUT=1
 ENV COMPlus_EnableDiagnostics=0
 
 # Install Pester
-RUN pwsh -c 'Install-Module Pester -Force -Scope AllUsers -MinimumVersion 4.0.0 -MaximumVersion 4.10.1 -ErrorAction Stop'
+RUN pwsh -c 'Install-Module Pester -Scope AllUsers -MinimumVersion 4.0.0 -MaximumVersion 4.10.1 -Force -ErrorAction Stop -Verbose'
+RUN pwsh -c 'Install-Module Pester -Scope AllUsers -MinimumVersion 5.0.0 -Force -ErrorAction Stop -Verbose'
 
 RUN apk add --no-cache git
 
