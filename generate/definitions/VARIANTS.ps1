@@ -37,7 +37,7 @@ $VARIANTS = @(
                 }
                 # Docker image tag. E.g. '6.1.0-alpine-3.8', '6.1.0-alpine-3.8-git',
                 tag = @(
-                    $variant['base_image_tag']
+                    $variant['base_image_tag'] -replace '-\d{8}', ''
                     $subVariant['components'] | ? { $_ }
                 ) -join '-'
                 tag_as_latest = if ( $subVariant.Contains('tag_as_latest') ) {
