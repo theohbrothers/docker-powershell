@@ -29,8 +29,11 @@ RUN apk add --no-cache git
             'sops' {
 
 @"
-# Note: `sops` does not provide binaries for other arch other than `linux/i386` and `linux/amd64`. So `sops` might not work on other architectures.
-RUN wget -qO- https://github.com/mozilla/sops/releases/download/v3.7.1/sops-v3.7.1.linux > /usr/local/bin/sops && chmod +x /usr/local/bin/sops
+RUN set -eux; \
+    wget -qO- https://github.com/mozilla/sops/releases/download/v3.7.1/sops-v3.7.1.linux > /usr/local/bin/sops; \
+    chmod +x /usr/local/bin/sops; \
+    sha256sum /usr/local/bin/sops | grep '^185348fd77fc160d5bdf3cd20ecbc796163504fd3df196d7cb29000773657b74 '; \
+    sops --version
 
 RUN apk add --no-cache gnupg
 
@@ -46,24 +49,35 @@ RUN apk add --no-cache gnupg
         switch ($c) {
             'git' {
 @"
-RUN apt-get update \
-    && apt-get install -y git \
-    && rm -rf /var/lib/apt/lists/*
+RUN set -eux; \
+    apt-get update; \
+    apt-get install -y git; \
+    rm -rf /var/lib/apt/lists/*
 
 
 "@
             }
             'sops' {
 @"
-# Note: `sops` does not provide binaries for other arch other than `linux/i386` and `linux/amd64`. So `sops` might not work on other architectures.
-RUN apt-get update \
-    && apt-get install -y wget \
-    && wget -qO- https://github.com/mozilla/sops/releases/download/v3.7.1/sops-v3.7.1.linux > /usr/local/bin/sops && chmod +x /usr/local/bin/sops \
-    && rm -rf /var/lib/apt/lists/*
+# Install sops
+RUN set -eux; \
+    buildDeps="wget"; \
+    apt-get update; \
+    apt-get install --no-install-recommends -y `$buildDeps; \
+    wget -qO- https://github.com/mozilla/sops/releases/download/v3.7.1/sops-v3.7.1.linux > /usr/local/bin/sops; \
+    chmod +x /usr/local/bin/sops; \
+    sha256sum /usr/local/bin/sops | grep '^185348fd77fc160d5bdf3cd20ecbc796163504fd3df196d7cb29000773657b74 '; \
+    sops --version; \
+    apt-get purge --auto-remove -y `$buildDeps; \
+    apt-get clean; \
+    rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update \
-    && (apt-get install -y gpg || apt-get install -y gpgv2) \
-    && rm -rf /var/lib/apt/lists/*
+# Install gnupg for sops
+RUN set -eux; \
+    apt-get update; \
+    apt-get install --no-install-recommends -y gnupg2; \
+    apt-get clean; \
+    rm -rf /var/lib/apt/lists/*
 
 
 "@
