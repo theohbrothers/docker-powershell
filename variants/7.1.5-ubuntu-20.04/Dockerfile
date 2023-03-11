@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/powershell:7.0.3-ubuntu-18.04
+FROM mcr.microsoft.com/powershell:7.1.5-ubuntu-20.04
 
 # Disable telemetry for powershell 7.0.0 and above and .NET core: https://github.com/PowerShell/PowerShell/issues/16234#issuecomment-942139350
 ENV POWERSHELL_CLI_TELEMETRY_OPTOUT=1

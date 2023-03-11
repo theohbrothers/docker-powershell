@@ -16,12 +16,11 @@ RUN pwsh -c 'Install-Module Pester -Force -Scope AllUsers -MinimumVersion 4.0.0 
 
 "@
 
-$VARIANT['_metadata']['components'] | ? { $_ } | % {
-    $component = $_
+foreach ($c in $VARIANT['_metadata']['components']) {
     if ( $VARIANT['_metadata']['base_image_tag'] -match '\balpine\b' ) {
-        switch ($component) {
+        switch ($c) {
             'git' {
-                @"
+@"
 RUN apk add --no-cache git
 
 
@@ -29,7 +28,7 @@ RUN apk add --no-cache git
             }
             'sops' {
 
-                @"
+@"
 # Note: `sops` does not provide binaries for other arch other than `linux/i386` and `linux/amd64`. So `sops` might not work on other architectures.
 RUN wget -qO- https://github.com/mozilla/sops/releases/download/v3.7.1/sops-v3.7.1.linux > /usr/local/bin/sops && chmod +x /usr/local/bin/sops
 
@@ -44,9 +43,9 @@ RUN apk add --no-cache gnupg
         }
 
     }elseif ( $VARIANT['_metadata']['base_image_tag'] -match '\bubuntu\b' ) {
-        switch ($component) {
+        switch ($c) {
             'git' {
-                @"
+@"
 RUN apt-get update \
     && apt-get install -y git \
     && rm -rf /var/lib/apt/lists/*
@@ -55,7 +54,7 @@ RUN apt-get update \
 "@
             }
             'sops' {
-                @"
+@"
 # Note: `sops` does not provide binaries for other arch other than `linux/i386` and `linux/amd64`. So `sops` might not work on other architectures.
 RUN apt-get update \
     && apt-get install -y wget \
