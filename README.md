@@ -10,6 +10,8 @@ Dockerized `powershell`, based on [mcr.microsoft.com/powershell](https://hub.doc
 
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
+| `:7.3-alpine-3.17` | [View](variants/7.3-alpine-3.17) |
+| `:7.3-alpine-3.17-git-sops` | [View](variants/7.3-alpine-3.17-git-sops) |
 | `:7.2.2-alpine-3.14` | [View](variants/7.2.2-alpine-3.14) |
 | `:7.2.2-alpine-3.14-git-sops` | [View](variants/7.2.2-alpine-3.14-git-sops) |
 | `:7.1.5-alpine-3.13` | [View](variants/7.1.5-alpine-3.13) |
@@ -20,8 +22,10 @@ Dockerized `powershell`, based on [mcr.microsoft.com/powershell](https://hub.doc
 | `:6.2.4-alpine-3.8-git-sops` | [View](variants/6.2.4-alpine-3.8-git-sops) |
 | `:6.1.3-alpine-3.8` | [View](variants/6.1.3-alpine-3.8) |
 | `:6.1.3-alpine-3.8-git-sops` | [View](variants/6.1.3-alpine-3.8-git-sops) |
+| `:7.3-ubuntu-22.04` | [View](variants/7.3-ubuntu-22.04) |
+| `:7.3-ubuntu-22.04-git-sops`, `:latest` | [View](variants/7.3-ubuntu-22.04-git-sops) |
 | `:7.2.2-ubuntu-20.04` | [View](variants/7.2.2-ubuntu-20.04) |
-| `:7.2.2-ubuntu-20.04-git-sops`, `:latest` | [View](variants/7.2.2-ubuntu-20.04-git-sops) |
+| `:7.2.2-ubuntu-20.04-git-sops` | [View](variants/7.2.2-ubuntu-20.04-git-sops) |
 | `:7.1.5-ubuntu-20.04` | [View](variants/7.1.5-ubuntu-20.04) |
 | `:7.1.5-ubuntu-20.04-git-sops` | [View](variants/7.1.5-ubuntu-20.04-git-sops) |
 | `:7.0.3-ubuntu-18.04` | [View](variants/7.0.3-ubuntu-18.04) |
