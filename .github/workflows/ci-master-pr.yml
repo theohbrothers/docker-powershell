@@ -1581,6 +1581,7 @@ jobs:
           ${{ github.repository }}:${{ env.VARIANT }}
           ${{ github.repository }}:${{ env.REF_VARIANT }}
           ${{ github.repository }}:${{ env.REF_SHA_VARIANT }}
+          ${{ github.repository }}:latest
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
@@ -1701,7 +1702,6 @@ jobs:
           ${{ github.repository }}:${{ env.VARIANT }}
           ${{ github.repository }}:${{ env.REF_VARIANT }}
           ${{ github.repository }}:${{ env.REF_SHA_VARIANT }}
-          ${{ github.repository }}:latest
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 

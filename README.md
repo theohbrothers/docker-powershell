@@ -22,8 +22,8 @@ Dockerized `powershell`, based on [mcr.microsoft.com/powershell](https://hub.doc
 | `:6.2.4-alpine-3.8-git-sops` | [View](variants/6.2.4-alpine-3.8-git-sops) |
 | `:6.1.3-alpine-3.8` | [View](variants/6.1.3-alpine-3.8) |
 | `:6.1.3-alpine-3.8-git-sops` | [View](variants/6.1.3-alpine-3.8-git-sops) |
-| `:7.3-ubuntu-22.04` | [View](variants/7.3-ubuntu-22.04) |
-| `:7.3-ubuntu-22.04-git-sops`, `:latest` | [View](variants/7.3-ubuntu-22.04-git-sops) |
+| `:7.3-ubuntu-22.04`, `:latest` | [View](variants/7.3-ubuntu-22.04) |
+| `:7.3-ubuntu-22.04-git-sops` | [View](variants/7.3-ubuntu-22.04-git-sops) |
 | `:7.2.2-ubuntu-20.04` | [View](variants/7.2.2-ubuntu-20.04) |
 | `:7.2.2-ubuntu-20.04-git-sops` | [View](variants/7.2.2-ubuntu-20.04-git-sops) |
 | `:7.1.5-ubuntu-20.04` | [View](variants/7.1.5-ubuntu-20.04) |

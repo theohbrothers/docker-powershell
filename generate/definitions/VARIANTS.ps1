@@ -1,5 +1,5 @@
 # Docker image variants' definitions
-$local:VARIANTS_BASE_IMAGE_TAGS = @(
+$local:BASE_IMAGE_TAGS = @(
     '7.3-alpine-3.17'
     '7.2.2-alpine-3.14-20220318'
     '7.1.5-alpine-3.13-20211021'
@@ -15,14 +15,14 @@ $local:VARIANTS_BASE_IMAGE_TAGS = @(
     '6.1.3-ubuntu-18.04'
     '6.0.2-ubuntu-16.04'
 )
-$local:VARIANTS_BASE_IMAGE_TAG_LATEST_STABLE = $local:VARIANTS_BASE_IMAGE_TAGS | ? { $_ -match 'ubuntu' } | Select-Object -First 1
+$local:BASE_IMAGE_TAG_LATEST_STABLE = $local:BASE_IMAGE_TAGS | ? { $_ -match 'ubuntu' } | Select-Object -First 1
 $local:VARIANTS_MATRIX = @(
-    $local:VARIANTS_BASE_IMAGE_TAGS | % {
+    $local:BASE_IMAGE_TAGS | % {
         @{
             base_image_tag = $_
             subvariants = @(
-                @{ components = $null }
-                @{ components = @( 'git', 'sops' ); tag_as_latest = if ($_ -eq $local:VARIANTS_BASE_IMAGE_TAG_LATEST_STABLE ) { $true } else { $false } }
+                @{ components = @() }
+                @{ components = @( 'git', 'sops' ) }
             )
         }
     }
@@ -42,11 +42,7 @@ $VARIANTS = @(
                     $variant['base_image_tag'] -replace '-\d{8}', ''
                     $subVariant['components'] | ? { $_ }
                 ) -join '-'
-                tag_as_latest = if ( $subVariant.Contains('tag_as_latest') ) {
-                                    $subVariant['tag_as_latest']
-                                } else {
-                                    $false
-                                }
+                tag_as_latest = if ($variant['base_image_tag'] -eq $local:BASE_IMAGE_TAG_LATEST_STABLE -and $subVariant['components'].Count -eq 0) { $true } else { $false }
             }
         }
     }
