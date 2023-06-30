@@ -91,3 +91,11 @@ RUN set -eux; \
         throw "Only alpine and ubuntu base image tags supported"
     }
 }
+
+@"
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x docker-entrypoint.sh
+
+ENTRYPOINT [ "/docker-entrypoint.sh" ]
+
+"@
