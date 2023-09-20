@@ -1,14 +1,22 @@
+$local:VERSIONS = @( Get-Content $PSScriptRoot/versions.json -Encoding utf8 -raw | ConvertFrom-Json )
+
 # Docker image variants' definitions
 $local:BASE_IMAGE_TAGS = @(
-    '7.3-alpine-3.17'
-    'lts-7.2-alpine-3.17'
+    $r = Invoke-RestMethod https://mcr.microsoft.com/v2/powershell/tags/list
+
+    foreach ($v in $local:VERSIONS) {
+        $v = [version]$v
+        $r.tags | ? { $_ -match "^(lts-)?$( $v.Major )\.$( $v.Minor )(\.\d+)?-alpine-\d+\.\d+" } | Select-Object -Last 1
+    }
     '7.1.5-alpine-3.13-20211021'
     '7.0.3-alpine-3.9-20200928'
     '6.2.4-alpine-3.8'
     '6.1.3-alpine-3.8'
 
-    '7.3-ubuntu-22.04'
-    'lts-7.2-ubuntu-22.04'
+    foreach ($v in $local:VERSIONS) {
+        $v = [version]$v
+        $r.tags | ? { $_ -match "^(lts-)?$( $v.Major )\.$( $v.Minor )(\.\d+)?-ubuntu-\d+\.\d+$" } | Select-Object -Last 1
+    }
     '7.1.5-ubuntu-20.04-20211021'
     '7.0.3-ubuntu-18.04-20201027'
     '6.2.4-ubuntu-18.04'
