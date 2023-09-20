@@ -13,7 +13,7 @@ $local:BASE_IMAGE_TAGS = @(
     '7.0.3-ubuntu-18.04-20201027'
     '6.2.4-ubuntu-18.04'
     '6.1.3-ubuntu-18.04'
-    '6.0.2-ubuntu-16.04'
+    '6.0.4-ubuntu-16.04'
 )
 $local:BASE_IMAGE_TAG_LATEST_STABLE = $local:BASE_IMAGE_TAGS | ? { $_ -match 'ubuntu' } | Select-Object -First 1
 $local:VARIANTS_MATRIX = @(
