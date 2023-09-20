@@ -30,6 +30,7 @@ $local:VARIANTS_MATRIX = @(
             base_image_tag = $_
             subvariants = @(
                 @{ components = @() }
+                @{ components = @( 'git' ) }
                 @{ components = @( 'git', 'sops' ) }
             )
         }
