@@ -5,7 +5,7 @@
 [![github-release](https://img.shields.io/github/v/release/theohbrothers/docker-powershell?style=flat-square)](https://github.com/theohbrothers/docker-powershell/releases/)
 [![docker-image-size](https://img.shields.io/docker/image-size/theohbrothers/docker-powershell/latest)](https://hub.docker.com/r/theohbrothers/docker-powershell)
 
-Dockerized ``powershell``, based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/microsoft/powershell/), with useful tools.
+Dockerized ``powershell``, based on [mcr.microsoft.com/powershell](https://hub.docker.com/r/microsoft/powershell/), with [Pester](https://github.com/Pester/Pester) 4 and 5, and useful tools.
 
 ## Tags
 
