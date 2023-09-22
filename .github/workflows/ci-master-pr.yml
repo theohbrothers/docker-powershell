@@ -33,10 +33,10 @@ jobs:
       run: |
         git diff --exit-code
 
-  build-7-3-alpine-3-17:
+  build-7-3:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 7.3-alpine-3.17
+      VARIANT: 7.3
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -108,7 +108,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.3-alpine-3.17
+        context: variants/7.3
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -122,7 +122,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.3-alpine-3.17
+        context: variants/7.3
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -135,7 +135,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.3-alpine-3.17
+        context: variants/7.3
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -153,10 +153,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-7-3-alpine-3-17-git:
+  build-7-3-git:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 7.3-alpine-3.17-git
+      VARIANT: 7.3-git
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -228,7 +228,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.3-alpine-3.17-git
+        context: variants/7.3-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -242,7 +242,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.3-alpine-3.17-git
+        context: variants/7.3-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -255,7 +255,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.3-alpine-3.17-git
+        context: variants/7.3-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -273,10 +273,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-7-3-alpine-3-17-git-sops:
+  build-7-3-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 7.3-alpine-3.17-git-sops
+      VARIANT: 7.3-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -348,7 +348,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.3-alpine-3.17-git-sops
+        context: variants/7.3-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -362,7 +362,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.3-alpine-3.17-git-sops
+        context: variants/7.3-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -375,7 +375,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.3-alpine-3.17-git-sops
+        context: variants/7.3-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -393,10 +393,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-7-2-alpine-3-17:
+  build-7-2:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 7.2-alpine-3.17
+      VARIANT: 7.2
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -468,7 +468,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.2-alpine-3.17
+        context: variants/7.2
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -482,7 +482,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.2-alpine-3.17
+        context: variants/7.2
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -495,7 +495,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.2-alpine-3.17
+        context: variants/7.2
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -513,10 +513,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-7-2-alpine-3-17-git:
+  build-7-2-git:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 7.2-alpine-3.17-git
+      VARIANT: 7.2-git
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -588,7 +588,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.2-alpine-3.17-git
+        context: variants/7.2-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -602,7 +602,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.2-alpine-3.17-git
+        context: variants/7.2-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -615,7 +615,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.2-alpine-3.17-git
+        context: variants/7.2-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -633,10 +633,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-7-2-alpine-3-17-git-sops:
+  build-7-2-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 7.2-alpine-3.17-git-sops
+      VARIANT: 7.2-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -708,7 +708,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.2-alpine-3.17-git-sops
+        context: variants/7.2-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -722,7 +722,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.2-alpine-3.17-git-sops
+        context: variants/7.2-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -735,7 +735,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.2-alpine-3.17-git-sops
+        context: variants/7.2-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -753,10 +753,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-7-1-5-alpine-3-13:
+  build-7-1-5:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 7.1.5-alpine-3.13
+      VARIANT: 7.1.5
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -828,7 +828,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.1.5-alpine-3.13
+        context: variants/7.1.5
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -842,7 +842,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.1.5-alpine-3.13
+        context: variants/7.1.5
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -855,7 +855,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.1.5-alpine-3.13
+        context: variants/7.1.5
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -873,10 +873,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-7-1-5-alpine-3-13-git:
+  build-7-1-5-git:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 7.1.5-alpine-3.13-git
+      VARIANT: 7.1.5-git
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -948,7 +948,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.1.5-alpine-3.13-git
+        context: variants/7.1.5-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -962,7 +962,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.1.5-alpine-3.13-git
+        context: variants/7.1.5-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -975,7 +975,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.1.5-alpine-3.13-git
+        context: variants/7.1.5-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -993,10 +993,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-7-1-5-alpine-3-13-git-sops:
+  build-7-1-5-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 7.1.5-alpine-3.13-git-sops
+      VARIANT: 7.1.5-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -1068,7 +1068,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.1.5-alpine-3.13-git-sops
+        context: variants/7.1.5-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -1082,7 +1082,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.1.5-alpine-3.13-git-sops
+        context: variants/7.1.5-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1095,7 +1095,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.1.5-alpine-3.13-git-sops
+        context: variants/7.1.5-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1113,10 +1113,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-7-0-3-alpine-3-9:
+  build-7-0-3:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 7.0.3-alpine-3.9
+      VARIANT: 7.0.3
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -1188,7 +1188,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.0.3-alpine-3.9
+        context: variants/7.0.3
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -1202,7 +1202,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.0.3-alpine-3.9
+        context: variants/7.0.3
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1215,7 +1215,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.0.3-alpine-3.9
+        context: variants/7.0.3
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1233,10 +1233,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-7-0-3-alpine-3-9-git:
+  build-7-0-3-git:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 7.0.3-alpine-3.9-git
+      VARIANT: 7.0.3-git
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -1308,7 +1308,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.0.3-alpine-3.9-git
+        context: variants/7.0.3-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -1322,7 +1322,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.0.3-alpine-3.9-git
+        context: variants/7.0.3-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1335,7 +1335,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.0.3-alpine-3.9-git
+        context: variants/7.0.3-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1353,10 +1353,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-7-0-3-alpine-3-9-git-sops:
+  build-7-0-3-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 7.0.3-alpine-3.9-git-sops
+      VARIANT: 7.0.3-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -1428,7 +1428,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.0.3-alpine-3.9-git-sops
+        context: variants/7.0.3-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -1442,7 +1442,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.0.3-alpine-3.9-git-sops
+        context: variants/7.0.3-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1455,7 +1455,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/7.0.3-alpine-3.9-git-sops
+        context: variants/7.0.3-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1473,10 +1473,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-6-2-4-alpine-3-8:
+  build-6-2-4:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 6.2.4-alpine-3.8
+      VARIANT: 6.2.4
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -1548,7 +1548,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.2.4-alpine-3.8
+        context: variants/6.2.4
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -1562,7 +1562,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.2.4-alpine-3.8
+        context: variants/6.2.4
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1575,7 +1575,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.2.4-alpine-3.8
+        context: variants/6.2.4
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1593,10 +1593,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-6-2-4-alpine-3-8-git:
+  build-6-2-4-git:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 6.2.4-alpine-3.8-git
+      VARIANT: 6.2.4-git
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -1668,7 +1668,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.2.4-alpine-3.8-git
+        context: variants/6.2.4-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -1682,7 +1682,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.2.4-alpine-3.8-git
+        context: variants/6.2.4-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1695,7 +1695,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.2.4-alpine-3.8-git
+        context: variants/6.2.4-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1713,10 +1713,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-6-2-4-alpine-3-8-git-sops:
+  build-6-2-4-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 6.2.4-alpine-3.8-git-sops
+      VARIANT: 6.2.4-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -1788,7 +1788,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.2.4-alpine-3.8-git-sops
+        context: variants/6.2.4-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -1802,7 +1802,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.2.4-alpine-3.8-git-sops
+        context: variants/6.2.4-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1815,7 +1815,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.2.4-alpine-3.8-git-sops
+        context: variants/6.2.4-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1833,10 +1833,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-6-1-3-alpine-3-8:
+  build-6-1-3:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 6.1.3-alpine-3.8
+      VARIANT: 6.1.3
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -1908,7 +1908,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.1.3-alpine-3.8
+        context: variants/6.1.3
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -1922,7 +1922,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.1.3-alpine-3.8
+        context: variants/6.1.3
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1935,7 +1935,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.1.3-alpine-3.8
+        context: variants/6.1.3
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -1953,10 +1953,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-6-1-3-alpine-3-8-git:
+  build-6-1-3-git:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 6.1.3-alpine-3.8-git
+      VARIANT: 6.1.3-git
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -2028,7 +2028,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.1.3-alpine-3.8-git
+        context: variants/6.1.3-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -2042,7 +2042,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.1.3-alpine-3.8-git
+        context: variants/6.1.3-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -2055,7 +2055,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.1.3-alpine-3.8-git
+        context: variants/6.1.3-git
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -2073,10 +2073,10 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  build-6-1-3-alpine-3-8-git-sops:
+  build-6-1-3-git-sops:
     runs-on: ubuntu-latest
     env:
-      VARIANT: 6.1.3-alpine-3.8-git-sops
+      VARIANT: 6.1.3-git-sops
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -2148,7 +2148,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.1.3-alpine-3.8-git-sops
+        context: variants/6.1.3-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: false
         tags: |
@@ -2162,7 +2162,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.1.3-alpine-3.8-git-sops
+        context: variants/6.1.3-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -2175,7 +2175,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
-        context: variants/6.1.3-alpine-3.8-git-sops
+        context: variants/6.1.3-git-sops
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x
         push: true
         tags: |
@@ -4715,7 +4715,7 @@ jobs:
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
   update-draft-release:
-    needs: [build-7-3-alpine-3-17, build-7-3-alpine-3-17-git, build-7-3-alpine-3-17-git-sops, build-7-2-alpine-3-17, build-7-2-alpine-3-17-git, build-7-2-alpine-3-17-git-sops, build-7-1-5-alpine-3-13, build-7-1-5-alpine-3-13-git, build-7-1-5-alpine-3-13-git-sops, build-7-0-3-alpine-3-9, build-7-0-3-alpine-3-9-git, build-7-0-3-alpine-3-9-git-sops, build-6-2-4-alpine-3-8, build-6-2-4-alpine-3-8-git, build-6-2-4-alpine-3-8-git-sops, build-6-1-3-alpine-3-8, build-6-1-3-alpine-3-8-git, build-6-1-3-alpine-3-8-git-sops, build-7-3-ubuntu-22-04, build-7-3-ubuntu-22-04-git, build-7-3-ubuntu-22-04-git-sops, build-7-2-ubuntu-22-04, build-7-2-ubuntu-22-04-git, build-7-2-ubuntu-22-04-git-sops, build-7-1-5-ubuntu-20-04, build-7-1-5-ubuntu-20-04-git, build-7-1-5-ubuntu-20-04-git-sops, build-7-0-3-ubuntu-18-04, build-7-0-3-ubuntu-18-04-git, build-7-0-3-ubuntu-18-04-git-sops, build-6-2-4-ubuntu-18-04, build-6-2-4-ubuntu-18-04-git, build-6-2-4-ubuntu-18-04-git-sops, build-6-1-3-ubuntu-18-04, build-6-1-3-ubuntu-18-04-git, build-6-1-3-ubuntu-18-04-git-sops, build-6-0-4-ubuntu-16-04, build-6-0-4-ubuntu-16-04-git, build-6-0-4-ubuntu-16-04-git-sops]
+    needs: [build-7-3, build-7-3-git, build-7-3-git-sops, build-7-2, build-7-2-git, build-7-2-git-sops, build-7-1-5, build-7-1-5-git, build-7-1-5-git-sops, build-7-0-3, build-7-0-3-git, build-7-0-3-git-sops, build-6-2-4, build-6-2-4-git, build-6-2-4-git-sops, build-6-1-3, build-6-1-3-git, build-6-1-3-git-sops, build-7-3-ubuntu-22-04, build-7-3-ubuntu-22-04-git, build-7-3-ubuntu-22-04-git-sops, build-7-2-ubuntu-22-04, build-7-2-ubuntu-22-04-git, build-7-2-ubuntu-22-04-git-sops, build-7-1-5-ubuntu-20-04, build-7-1-5-ubuntu-20-04-git, build-7-1-5-ubuntu-20-04-git-sops, build-7-0-3-ubuntu-18-04, build-7-0-3-ubuntu-18-04-git, build-7-0-3-ubuntu-18-04-git-sops, build-6-2-4-ubuntu-18-04, build-6-2-4-ubuntu-18-04-git, build-6-2-4-ubuntu-18-04-git-sops, build-6-1-3-ubuntu-18-04, build-6-1-3-ubuntu-18-04-git, build-6-1-3-ubuntu-18-04-git-sops, build-6-0-4-ubuntu-16-04, build-6-0-4-ubuntu-16-04-git, build-6-0-4-ubuntu-16-04-git-sops]
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
@@ -4728,7 +4728,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   publish-draft-release:
-    needs: [build-7-3-alpine-3-17, build-7-3-alpine-3-17-git, build-7-3-alpine-3-17-git-sops, build-7-2-alpine-3-17, build-7-2-alpine-3-17-git, build-7-2-alpine-3-17-git-sops, build-7-1-5-alpine-3-13, build-7-1-5-alpine-3-13-git, build-7-1-5-alpine-3-13-git-sops, build-7-0-3-alpine-3-9, build-7-0-3-alpine-3-9-git, build-7-0-3-alpine-3-9-git-sops, build-6-2-4-alpine-3-8, build-6-2-4-alpine-3-8-git, build-6-2-4-alpine-3-8-git-sops, build-6-1-3-alpine-3-8, build-6-1-3-alpine-3-8-git, build-6-1-3-alpine-3-8-git-sops, build-7-3-ubuntu-22-04, build-7-3-ubuntu-22-04-git, build-7-3-ubuntu-22-04-git-sops, build-7-2-ubuntu-22-04, build-7-2-ubuntu-22-04-git, build-7-2-ubuntu-22-04-git-sops, build-7-1-5-ubuntu-20-04, build-7-1-5-ubuntu-20-04-git, build-7-1-5-ubuntu-20-04-git-sops, build-7-0-3-ubuntu-18-04, build-7-0-3-ubuntu-18-04-git, build-7-0-3-ubuntu-18-04-git-sops, build-6-2-4-ubuntu-18-04, build-6-2-4-ubuntu-18-04-git, build-6-2-4-ubuntu-18-04-git-sops, build-6-1-3-ubuntu-18-04, build-6-1-3-ubuntu-18-04-git, build-6-1-3-ubuntu-18-04-git-sops, build-6-0-4-ubuntu-16-04, build-6-0-4-ubuntu-16-04-git, build-6-0-4-ubuntu-16-04-git-sops]
+    needs: [build-7-3, build-7-3-git, build-7-3-git-sops, build-7-2, build-7-2-git, build-7-2-git-sops, build-7-1-5, build-7-1-5-git, build-7-1-5-git-sops, build-7-0-3, build-7-0-3-git, build-7-0-3-git-sops, build-6-2-4, build-6-2-4-git, build-6-2-4-git-sops, build-6-1-3, build-6-1-3-git, build-6-1-3-git-sops, build-7-3-ubuntu-22-04, build-7-3-ubuntu-22-04-git, build-7-3-ubuntu-22-04-git-sops, build-7-2-ubuntu-22-04, build-7-2-ubuntu-22-04-git, build-7-2-ubuntu-22-04-git-sops, build-7-1-5-ubuntu-20-04, build-7-1-5-ubuntu-20-04-git, build-7-1-5-ubuntu-20-04-git-sops, build-7-0-3-ubuntu-18-04, build-7-0-3-ubuntu-18-04-git, build-7-0-3-ubuntu-18-04-git-sops, build-6-2-4-ubuntu-18-04, build-6-2-4-ubuntu-18-04-git, build-6-2-4-ubuntu-18-04-git-sops, build-6-1-3-ubuntu-18-04, build-6-1-3-ubuntu-18-04-git, build-6-1-3-ubuntu-18-04-git-sops, build-6-0-4-ubuntu-16-04, build-6-0-4-ubuntu-16-04-git, build-6-0-4-ubuntu-16-04-git-sops]
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
@@ -4743,7 +4743,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   update-dockerhub-description:
-    needs: [build-7-3-alpine-3-17, build-7-3-alpine-3-17-git, build-7-3-alpine-3-17-git-sops, build-7-2-alpine-3-17, build-7-2-alpine-3-17-git, build-7-2-alpine-3-17-git-sops, build-7-1-5-alpine-3-13, build-7-1-5-alpine-3-13-git, build-7-1-5-alpine-3-13-git-sops, build-7-0-3-alpine-3-9, build-7-0-3-alpine-3-9-git, build-7-0-3-alpine-3-9-git-sops, build-6-2-4-alpine-3-8, build-6-2-4-alpine-3-8-git, build-6-2-4-alpine-3-8-git-sops, build-6-1-3-alpine-3-8, build-6-1-3-alpine-3-8-git, build-6-1-3-alpine-3-8-git-sops, build-7-3-ubuntu-22-04, build-7-3-ubuntu-22-04-git, build-7-3-ubuntu-22-04-git-sops, build-7-2-ubuntu-22-04, build-7-2-ubuntu-22-04-git, build-7-2-ubuntu-22-04-git-sops, build-7-1-5-ubuntu-20-04, build-7-1-5-ubuntu-20-04-git, build-7-1-5-ubuntu-20-04-git-sops, build-7-0-3-ubuntu-18-04, build-7-0-3-ubuntu-18-04-git, build-7-0-3-ubuntu-18-04-git-sops, build-6-2-4-ubuntu-18-04, build-6-2-4-ubuntu-18-04-git, build-6-2-4-ubuntu-18-04-git-sops, build-6-1-3-ubuntu-18-04, build-6-1-3-ubuntu-18-04-git, build-6-1-3-ubuntu-18-04-git-sops, build-6-0-4-ubuntu-16-04, build-6-0-4-ubuntu-16-04-git, build-6-0-4-ubuntu-16-04-git-sops]
+    needs: [build-7-3, build-7-3-git, build-7-3-git-sops, build-7-2, build-7-2-git, build-7-2-git-sops, build-7-1-5, build-7-1-5-git, build-7-1-5-git-sops, build-7-0-3, build-7-0-3-git, build-7-0-3-git-sops, build-6-2-4, build-6-2-4-git, build-6-2-4-git-sops, build-6-1-3, build-6-1-3-git, build-6-1-3-git-sops, build-7-3-ubuntu-22-04, build-7-3-ubuntu-22-04-git, build-7-3-ubuntu-22-04-git-sops, build-7-2-ubuntu-22-04, build-7-2-ubuntu-22-04-git, build-7-2-ubuntu-22-04-git-sops, build-7-1-5-ubuntu-20-04, build-7-1-5-ubuntu-20-04-git, build-7-1-5-ubuntu-20-04-git-sops, build-7-0-3-ubuntu-18-04, build-7-0-3-ubuntu-18-04-git, build-7-0-3-ubuntu-18-04-git-sops, build-6-2-4-ubuntu-18-04, build-6-2-4-ubuntu-18-04-git, build-6-2-4-ubuntu-18-04-git-sops, build-6-1-3-ubuntu-18-04, build-6-1-3-ubuntu-18-04-git, build-6-1-3-ubuntu-18-04-git-sops, build-6-0-4-ubuntu-16-04, build-6-0-4-ubuntu-16-04-git, build-6-0-4-ubuntu-16-04-git-sops]
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:

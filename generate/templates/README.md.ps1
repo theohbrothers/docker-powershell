@@ -9,6 +9,8 @@ Dockerized ``powershell``, based on [mcr.microsoft.com/powershell](https://hub.d
 
 ## Tags
 
+Variants without a distro are based on ``alpine``.
+
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
 $(

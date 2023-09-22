@@ -48,7 +48,14 @@ $VARIANTS = @(
                 }
                 # Docker image tag. E.g. '7.1.5-alpine-3.13'
                 tag = @(
-                    $variant['base_image_tag'] -replace '^lts-', '' -replace '-\d{8}$', '' # Replace 'lts-' prefix and 8-digit calver suffix
+                    if ($variant['base_image_tag'] -match '^(lts-)?(\d+\.\d+)(\.\d+)?-(alpine|ubuntu)-(\d+\.\d+)') {
+                        if ($matches[4] -eq 'alpine') {
+                            "$( $matches[2] )$( $matches[3] )" # Only the version number
+                        }
+                        if ($matches[4] -eq 'ubuntu') {
+                            "$( $matches[2] )$( $matches[3] )-$( $matches[4] )-$( $matches[5] )" # Strip 'lts-' prefix and 8-digit calver suffix
+                        }
+                    }
                     $subVariant['components'] | ? { $_ }
                 ) -join '-'
                 tag_as_latest = if ($variant['base_image_tag'] -eq $local:BASE_IMAGE_TAG_LATEST_STABLE -and $subVariant['components'].Count -eq 0) { $true } else { $false }
