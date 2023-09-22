@@ -4,7 +4,7 @@ $local:VERSIONS = @( Get-Content $PSScriptRoot/versions.json -Encoding utf8 -raw
 $local:BASE_IMAGE_TAGS = @(
     $r = Invoke-RestMethod https://mcr.microsoft.com/v2/powershell/tags/list
 
-    foreach ($v in $local:VERSIONS) {
+    foreach ($v in $local:VERSIONS.pwsh.versions) {
         $v = [version]$v
         $r.tags | ? { $_ -match "^(lts-)?$( $v.Major )\.$( $v.Minor )(\.\d+)?-alpine-\d+\.\d+" } | Select-Object -Last 1
     }
@@ -13,7 +13,7 @@ $local:BASE_IMAGE_TAGS = @(
     '6.2.4-alpine-3.8'
     '6.1.3-alpine-3.8'
 
-    foreach ($v in $local:VERSIONS) {
+    foreach ($v in $local:VERSIONS.pwsh.versions) {
         $v = [version]$v
         $r.tags | ? { $_ -match "^(lts-)?$( $v.Major )\.$( $v.Minor )(\.\d+)?-ubuntu-\d+\.\d+$" } | Select-Object -Last 1
     }
