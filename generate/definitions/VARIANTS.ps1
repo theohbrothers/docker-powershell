@@ -28,6 +28,7 @@ $local:VARIANTS_MATRIX = @(
     $local:BASE_IMAGE_TAGS | % {
         @{
             base_image_tag = $_
+            package_version = $_ -replace '^lts-', '' -replace '^([^-]+)-.+', '$1'
             subvariants = @(
                 @{ components = @() }
                 @{ components = @( 'git' ) }
@@ -43,6 +44,7 @@ $VARIANTS = @(
                 # Metadata object
                 _metadata = @{
                     base_image_tag = $variant['base_image_tag']
+                    package_version = $variant['package_version']
                     platforms =  'linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x'
                     components = $subVariant['components']
                 }
