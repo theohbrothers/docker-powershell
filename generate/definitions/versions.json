@@ -5,6 +5,6 @@
       "7.2.15"
     ],
     "versionsChangeScope": "minor",
-    "versionsNewScript": "Invoke-WebRequest https://api.github.com/repos/powershell/powershell/git/refs/tags | ConvertFrom-Json | % { $_.ref -replace 'refs/tags/v', ''} | ? { $_ -match '^\\d+\\.\\d+\\.\\d+$' } | Sort-Object { [version]$_ } -Descending"
+    "versionsNewScript": "Invoke-WebRequest https://api.github.com/repos/powershell/powershell/git/refs/tags | ConvertFrom-Json | % { $_.ref -replace 'refs/tags/v', '' } | ? { $_ -match '^\\d+\\.\\d+\\.\\d+$' } | Sort-Object { [version]$_ } -Descending | ? { [version]$_ -ge [version]'7.2' }"
   }
 }
