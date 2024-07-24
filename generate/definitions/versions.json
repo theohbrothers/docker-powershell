@@ -3,7 +3,7 @@
     "versions": [
       "7.4.3",
       "7.3.12",
-      "7.2.21"
+      "7.2.22"
     ],
     "versionsChangeScope": "minor",
     "versionsNewScript": "Invoke-WebRequest https://api.github.com/repos/powershell/powershell/git/refs/tags | ConvertFrom-Json | % { $_.ref -replace 'refs/tags/v', '' } | ? { $_ -match '^\\d+\\.\\d+\\.\\d+$' } | Sort-Object { [version]$_ } -Descending | ? { [version]$_ -ge [version]'7.2' }"
