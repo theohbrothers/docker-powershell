@@ -15,9 +15,9 @@ RUN pwsh -c 'Install-Module Pester -Scope AllUsers -MinimumVersion 4.0.0 -Maximu
 RUN apk add --no-cache git
 
 RUN set -eux; \
-    wget -qO- https://github.com/mozilla/sops/releases/download/v3.7.1/sops-v3.7.1.linux > /usr/local/bin/sops; \
+    wget -qO- https://github.com/mozilla/sops/releases/download/v3.7.3/sops-v3.7.3.linux > /usr/local/bin/sops; \
     chmod +x /usr/local/bin/sops; \
-    sha256sum /usr/local/bin/sops | grep '^185348fd77fc160d5bdf3cd20ecbc796163504fd3df196d7cb29000773657b74 '; \
+    sha256sum /usr/local/bin/sops | grep '^53aec65e45f62a769ff24b7e5384f0c82d62668dd96ed56685f649da114b4dbb '; \
     sops --version
 
 RUN apk add --no-cache gnupg
