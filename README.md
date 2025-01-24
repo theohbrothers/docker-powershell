@@ -10,9 +10,9 @@ Dockerized `powershell`, based on [mcr.microsoft.com/powershell](https://hub.doc
 
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
-| `:7.4-alpine-3.17` | [View](variants/7.4-alpine-3.17) |
-| `:7.4-alpine-3.17-git` | [View](variants/7.4-alpine-3.17-git) |
-| `:7.4-alpine-3.17-git-sops` | [View](variants/7.4-alpine-3.17-git-sops) |
+| `:7.4-alpine-3.20` | [View](variants/7.4-alpine-3.20) |
+| `:7.4-alpine-3.20-git` | [View](variants/7.4-alpine-3.20-git) |
+| `:7.4-alpine-3.20-git-sops` | [View](variants/7.4-alpine-3.20-git-sops) |
 | `:7.3-alpine-3.17` | [View](variants/7.3-alpine-3.17) |
 | `:7.3-alpine-3.17-git` | [View](variants/7.3-alpine-3.17-git) |
 | `:7.3-alpine-3.17-git-sops` | [View](variants/7.3-alpine-3.17-git-sops) |
