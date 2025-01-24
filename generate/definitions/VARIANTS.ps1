@@ -6,7 +6,11 @@ $local:BASE_IMAGE_TAGS = @(
 
     foreach ($v in $local:VERSIONS.pwsh.versions) {
         $v = [version]$v
-        $r.tags | ? { $_ -match "^(lts-)?$( $v.Major )\.$( $v.Minor )(\.\d+)?-alpine-\d+\.\d+" } | Select-Object -Last 1
+        $t = $r.tags | ? { $_ -match "^(lts-)?$( $v.Major )\.$( $v.Minor )(\.\d+)?-alpine-\d+\.\d+" } | Select-Object -Last 1
+        if ($null -eq $t) {
+            throw "No tag found for $v"
+        }
+        $t
     }
     '7.1.5-alpine-3.13-20211021'
     '7.0.3-alpine-3.9-20200928'
@@ -15,7 +19,11 @@ $local:BASE_IMAGE_TAGS = @(
 
     foreach ($v in $local:VERSIONS.pwsh.versions) {
         $v = [version]$v
-        $r.tags | ? { $_ -match "^(lts-)?$( $v.Major )\.$( $v.Minor )(\.\d+)?-ubuntu-\d+\.\d+$" } | Select-Object -Last 1
+        $t = $r.tags | ? { $_ -match "^(lts-)?$( $v.Major )\.$( $v.Minor )(\.\d+)?-ubuntu-\d+\.\d+$" } | Select-Object -Last 1
+        if ($null -eq $t) {
+            throw "No tag found for $v"
+        }
+        $t
     }
     '7.1.5-ubuntu-20.04-20211021'
     '7.0.3-ubuntu-18.04-20201027'
