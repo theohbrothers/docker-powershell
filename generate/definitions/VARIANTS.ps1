@@ -6,7 +6,7 @@ $local:BASE_IMAGE_TAGS = @(
 
     foreach ($v in $local:VERSIONS.pwsh.versions) {
         $v = [version]$v
-        $t = $r.tags | ? { $_ -match "^(lts-)?$( $v.Major )\.$( $v.Minor )(\.\d+)?-alpine-\d+\.\d+" } | Select-Object -Last 1
+        $t = $r.tags | ? { $_ -match "^(lts-)?$( $v.Major )\.$( $v.Minor )(\.\d+)?-alpine-\d+\.\d+$" } | Select-Object -Last 1
         if ($null -eq $t) {
             throw "No tag found for $v"
         }
