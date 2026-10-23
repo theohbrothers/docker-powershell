@@ -16,6 +16,18 @@ RUN pwsh -c 'Install-Module Pester -Scope AllUsers -MinimumVersion 4.0.0 -Maximu
 
 "@
 
+if ( $VARIANT['_metadata']['base_image_tag'] -match '\bubuntu\b' ) {
+    @"
+# Add basic provisioning tools
+RUN set -eux; \
+    apt-get update; \
+    apt-get install --no-install-recommends -y wget; \
+    rm -rf /var/lib/apt/lists/*
+
+
+"@
+}
+
 foreach ($c in $VARIANT['_metadata']['components']) {
     if ( $VARIANT['_metadata']['base_image_tag'] -match '\balpine\b' ) {
         switch ($c) {
@@ -26,20 +38,25 @@ RUN apk add --no-cache git
 
 "@
             }
+
             'sops' {
+                $SOPS_VERSION = "3.13.3"
+                Generate-DownloadBinary @{
+                    binary = 'sops'
+                    version = $SOPS_VERSION
+                    checksumsUrl = "https://github.com/getsops/sops/releases/download/v$SOPS_VERSION/sops-v$SOPS_VERSION.checksums.txt"
+                    platformFallback = 'linux/amd64'
+                    destination = '/usr/local/bin/sops'
+                    testCommand = 'sops --version --disable-version-check'
+                }
 
-@"
-RUN set -eux; \
-    wget -qO- https://github.com/mozilla/sops/releases/download/v3.7.3/sops-v3.7.3.linux > /usr/local/bin/sops; \
-    chmod +x /usr/local/bin/sops; \
-    sha256sum /usr/local/bin/sops | grep '^53aec65e45f62a769ff24b7e5384f0c82d62668dd96ed56685f649da114b4dbb '; \
-    sops --version
-
+                @"
 RUN apk add --no-cache gnupg
 
 
 "@
             }
+
             default {
                 throw "No such component: $component"
             }
@@ -57,21 +74,19 @@ RUN set -eux; \
 
 "@
             }
-            'sops' {
-@"
-# Install sops
-RUN set -eux; \
-    buildDeps="wget"; \
-    apt-get update; \
-    apt-get install --no-install-recommends -y `$buildDeps; \
-    wget -qO- https://github.com/mozilla/sops/releases/download/v3.7.1/sops-v3.7.1.linux > /usr/local/bin/sops; \
-    chmod +x /usr/local/bin/sops; \
-    sha256sum /usr/local/bin/sops | grep '^185348fd77fc160d5bdf3cd20ecbc796163504fd3df196d7cb29000773657b74 '; \
-    sops --version; \
-    apt-get purge --auto-remove -y `$buildDeps; \
-    apt-get clean; \
-    rm -rf /var/lib/apt/lists/*
 
+            'sops' {
+                $SOPS_VERSION = "3.13.3"
+                Generate-DownloadBinary @{
+                    binary = 'sops'
+                    version = $SOPS_VERSION
+                    checksumsUrl = "https://github.com/getsops/sops/releases/download/v$SOPS_VERSION/sops-v$SOPS_VERSION.checksums.txt"
+                    platformFallback = 'linux/amd64'
+                    destination = '/usr/local/bin/sops'
+                    testCommand = 'sops --version --disable-version-check'
+                }
+
+                @"
 # Install gnupg for sops
 RUN set -eux; \
     apt-get update; \
@@ -82,6 +97,7 @@ RUN set -eux; \
 
 "@
             }
+
             default {
                 throw "No such component: $component"
             }

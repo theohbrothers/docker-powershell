@@ -12,6 +12,12 @@ ENV COMPlus_EnableDiagnostics=0
 # Install Pester
 RUN pwsh -c 'Install-Module Pester -Scope AllUsers -MinimumVersion 4.0.0 -MaximumVersion 4.10.1 -Force -ErrorAction Stop -Verbose'
 
+# Add basic provisioning tools
+RUN set -eux; \
+    apt-get update; \
+    apt-get install --no-install-recommends -y wget; \
+    rm -rf /var/lib/apt/lists/*
+
 RUN set -eux; \
     apt-get update; \
     apt-get install -y git; \
@@ -19,16 +25,30 @@ RUN set -eux; \
 
 # Install sops
 RUN set -eux; \
-    buildDeps="wget"; \
-    apt-get update; \
-    apt-get install --no-install-recommends -y $buildDeps; \
-    wget -qO- https://github.com/mozilla/sops/releases/download/v3.7.1/sops-v3.7.1.linux > /usr/local/bin/sops; \
+    SOPS_VERSION=3.13.3; \
+    case "$( uname -m )" in \
+        'x86_64') \
+            URL="https://github.com/getsops/sops/releases/download/v3.13.3/sops-v3.13.3.linux.amd64"; \
+            SHA256=e5bec3346a873ae91d871550f3e698c1aad962aff462a080e40f25fde17fef6b; \
+            ;; \
+        'aarch64') \
+            URL="https://github.com/getsops/sops/releases/download/v3.13.3/sops-v3.13.3.linux.arm64"; \
+            SHA256=53b0abacd38ef1b12a66d6c100956691b9cefce018d91f81e73ddf7438b94d77; \
+            ;; \
+        *) \
+            URL="https://github.com/getsops/sops/releases/download/v3.13.3/sops-v3.13.3.linux.amd64"; \
+            SHA256=e5bec3346a873ae91d871550f3e698c1aad962aff462a080e40f25fde17fef6b; \
+            ;; \
+    esac; \
+    FILE=sops; \
+    wget -q "$URL" -O "$FILE"; \
+    echo "$SHA256  $FILE" | sha256sum -c -; \
+    BIN=sops; \
+    mkdir -pv /usr/local/bin; \
+    mv -v "$BIN" /usr/local/bin/sops; \
     chmod +x /usr/local/bin/sops; \
-    sha256sum /usr/local/bin/sops | grep '^185348fd77fc160d5bdf3cd20ecbc796163504fd3df196d7cb29000773657b74 '; \
-    sops --version; \
-    apt-get purge --auto-remove -y $buildDeps; \
-    apt-get clean; \
-    rm -rf /var/lib/apt/lists/*
+    sops --version --disable-version-check; \
+    :
 
 # Install gnupg for sops
 RUN set -eux; \

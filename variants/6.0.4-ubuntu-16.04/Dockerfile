@@ -12,6 +12,12 @@ ENV COMPlus_EnableDiagnostics=0
 # Install Pester
 RUN pwsh -c 'Install-Module Pester -Scope AllUsers -MinimumVersion 4.0.0 -MaximumVersion 4.10.1 -Force -ErrorAction Stop -Verbose'
 
+# Add basic provisioning tools
+RUN set -eux; \
+    apt-get update; \
+    apt-get install --no-install-recommends -y wget; \
+    rm -rf /var/lib/apt/lists/*
+
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x docker-entrypoint.sh
 
