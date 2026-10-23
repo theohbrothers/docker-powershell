@@ -29,42 +29,16 @@ RUN set -eux; \
 }
 
 foreach ($c in $VARIANT['_metadata']['components']) {
-    if ( $VARIANT['_metadata']['base_image_tag'] -match '\balpine\b' ) {
-        switch ($c) {
-            'git' {
+    switch ($c) {
+        'git' {
+            if ( $VARIANT['_metadata']['base_image_tag'] -match '\balpine\b' ) {
 @"
 RUN apk add --no-cache git
 
 
 "@
             }
-
-            'sops' {
-                $SOPS_VERSION = "3.13.3"
-                Generate-DownloadBinary @{
-                    binary = 'sops'
-                    version = $SOPS_VERSION
-                    checksumsUrl = "https://github.com/getsops/sops/releases/download/v$SOPS_VERSION/sops-v$SOPS_VERSION.checksums.txt"
-                    platformFallback = 'linux/amd64'
-                    destination = '/usr/local/bin/sops'
-                    testCommand = 'sops --version --disable-version-check'
-                }
-
-                @"
-RUN apk add --no-cache gnupg
-
-
-"@
-            }
-
-            default {
-                throw "No such component: $component"
-            }
-        }
-
-    }elseif ( $VARIANT['_metadata']['base_image_tag'] -match '\bubuntu\b' ) {
-        switch ($c) {
-            'git' {
+            if ( $VARIANT['_metadata']['base_image_tag'] -match '\bubuntu\b' ) {
 @"
 RUN set -eux; \
     apt-get update; \
@@ -74,19 +48,29 @@ RUN set -eux; \
 
 "@
             }
+        }
 
-            'sops' {
-                $SOPS_VERSION = "3.13.3"
-                Generate-DownloadBinary @{
-                    binary = 'sops'
-                    version = $SOPS_VERSION
-                    checksumsUrl = "https://github.com/getsops/sops/releases/download/v$SOPS_VERSION/sops-v$SOPS_VERSION.checksums.txt"
-                    platformFallback = 'linux/amd64'
-                    destination = '/usr/local/bin/sops'
-                    testCommand = 'sops --version --disable-version-check'
-                }
+        'sops' {
+            $SOPS_VERSION = "3.13.3"
+            Generate-DownloadBinary @{
+                binary = 'sops'
+                version = $SOPS_VERSION
+                checksumsUrl = "https://github.com/getsops/sops/releases/download/v$SOPS_VERSION/sops-v$SOPS_VERSION.checksums.txt"
+                platformFallback = 'linux/amd64'
+                destination = '/usr/local/bin/sops'
+                testCommand = 'sops --version --disable-version-check'
+            }
 
-                @"
+            if ( $VARIANT['_metadata']['base_image_tag'] -match '\balpine\b' ) {
+@"
+# Install gnupg for sops
+RUN apk add --no-cache gnupg
+
+
+"@
+            }
+            if ( $VARIANT['_metadata']['base_image_tag'] -match '\bubuntu\b' ) {
+@"
 # Install gnupg for sops
 RUN set -eux; \
     apt-get update; \
@@ -97,13 +81,11 @@ RUN set -eux; \
 
 "@
             }
-
-            default {
-                throw "No such component: $component"
-            }
         }
-    }else {
-        throw "Only alpine and ubuntu base image tags supported"
+
+        default {
+            throw "No such component: $component"
+        }
     }
 }
 
