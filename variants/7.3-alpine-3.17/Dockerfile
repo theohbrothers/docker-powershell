@@ -10,7 +10,7 @@ ENV DOTNET_TELEMETRY_OPTOUT=1
 ENV COMPlus_EnableDiagnostics=0
 
 # Install Pester
-RUN pwsh -c 'Install-Module Pester -Scope AllUsers -MinimumVersion 4.0.0 -MaximumVersion 4.10.1 -Force -ErrorAction Stop -Verbose'
+RUN pwsh -c 'Install-Module Pester -Scope AllUsers -MinimumVersion 4.10.1 -MaximumVersion 4.10.1 -Force -ErrorAction Stop -Verbose'
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x docker-entrypoint.sh
