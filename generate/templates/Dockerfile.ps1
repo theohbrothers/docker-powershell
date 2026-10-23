@@ -11,7 +11,11 @@ ENV DOTNET_TELEMETRY_OPTOUT=1
 ENV COMPlus_EnableDiagnostics=0
 
 # Install Pester
-RUN pwsh -c 'Install-Module Pester -Scope AllUsers -MinimumVersion 4.10.1 -MaximumVersion 4.10.1 -Force -ErrorAction Stop -Verbose'
+RUN pwsh -c ' \
+    Install-Module Pester -Scope AllUsers -RequiredVersion 4.10.1 -Force -ErrorAction Stop -Verbose; \
+    Install-Module Pester -Scope AllUsers -RequiredVersion 5.9.1 -Force -ErrorAction Stop -Verbose; \
+    Get-Module -ListAvailable; \
+    '
 
 
 "@
