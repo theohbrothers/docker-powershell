@@ -41,6 +41,7 @@ RUN set -eux; \
     sops --version --disable-version-check; \
     :
 
+# Install gnupg for sops
 RUN apk add --no-cache gnupg
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
